@@ -1,0 +1,212 @@
+[
+    {
+        "ticker": "AAPL",
+        "date": "2024-01-15",
+        "headline": "Apple reports record Q1 revenue driven by iPhone 15 demand"
+    },
+    {
+        "ticker": "AAPL",
+        "date": "2024-01-16",
+        "headline": "Apple's Vision Pro pre-orders exceed analyst expectations"
+    },
+    {
+        "ticker": "AAPL",
+        "date": "2024-01-17",
+        "headline": "Apple faces antitrust scrutiny from EU regulators over App Store practices"
+    },
+    {
+        "ticker": "AAPL",
+        "date": "2024-01-18",
+        "headline": "Apple cuts prices in China amid fierce competition from Huawei"
+    },
+    {
+        "ticker": "AAPL",
+        "date": "2024-01-19",
+        "headline": "Apple announces expanded share buyback program"
+    },
+    {
+        "ticker": "MSFT",
+        "date": "2024-01-15",
+        "headline": "Microsoft Azure revenue grows 30% year-over-year beating estimates"
+    },
+    {
+        "ticker": "MSFT",
+        "date": "2024-01-16",
+        "headline": "Microsoft's Copilot AI sees rapid enterprise adoption"
+    },
+    {
+        "ticker": "MSFT",
+        "date": "2024-01-17",
+        "headline": "Microsoft invests additional $10B in OpenAI partnership"
+    },
+    {
+        "ticker": "MSFT",
+        "date": "2024-01-18",
+        "headline": "Microsoft faces DOJ investigation over cloud market dominance"
+    },
+    {
+        "ticker": "TSLA",
+        "date": "2024-01-15",
+        "headline": "Tesla misses Q4 delivery estimates amid production slowdown"
+    },
+    {
+        "ticker": "TSLA",
+        "date": "2024-01-16",
+        "headline": "Tesla recalls 2 million vehicles over autopilot safety concerns"
+    },
+    {
+        "ticker": "TSLA",
+        "date": "2024-01-17",
+        "headline": "Tesla Cybertruck deliveries begin but at lower margins than expected"
+    },
+    {
+        "ticker": "TSLA",
+        "date": "2024-01-18",
+        "headline": "Tesla slashes prices across entire lineup for third time this year"
+    },
+    {
+        "ticker": "TSLA",
+        "date": "2024-01-19",
+        "headline": "Elon Musk unveils next-gen battery technology at Tesla investor day"
+    },
+    {
+        "ticker": "JPM",
+        "date": "2024-01-15",
+        "headline": "JPMorgan reports strong Q4 earnings beating all analyst estimates"
+    },
+    {
+        "ticker": "JPM",
+        "date": "2024-01-16",
+        "headline": "JPMorgan CEO warns of persistent inflation and geopolitical risks"
+    },
+    {
+        "ticker": "JPM",
+        "date": "2024-01-17",
+        "headline": "JPMorgan expands wealth management division with new acquisitions"
+    },
+    {
+        "ticker": "JPM",
+        "date": "2024-01-18",
+        "headline": "JPMorgan faces $500M fine for compliance failures in trading desk"
+    },
+    {
+        "ticker": "NVDA",
+        "date": "2024-01-15",
+        "headline": "NVIDIA data center revenue surges 400% on insatiable AI chip demand"
+    },
+    {
+        "ticker": "NVDA",
+        "date": "2024-01-16",
+        "headline": "NVIDIA announces next-gen Blackwell GPU architecture"
+    },
+    {
+        "ticker": "NVDA",
+        "date": "2024-01-17",
+        "headline": "NVIDIA faces export restrictions on advanced chips to China"
+    },
+    {
+        "ticker": "NVDA",
+        "date": "2024-01-18",
+        "headline": "NVIDIA partners with major healthcare companies for AI drug discovery"
+    },
+    {
+        "ticker": "AMZN",
+        "date": "2024-01-15",
+        "headline": "Amazon Web Services growth re-accelerates to 14% in Q4"
+    },
+    {
+        "ticker": "AMZN",
+        "date": "2024-01-16",
+        "headline": "Amazon announces largest layoff round in company history"
+    },
+    {
+        "ticker": "AMZN",
+        "date": "2024-01-17",
+        "headline": "Amazon Prime membership reaches 250 million subscribers globally"
+    },
+    {
+        "ticker": "AMZN",
+        "date": "2024-01-18",
+        "headline": "FTC files new antitrust suit against Amazon's marketplace practices"
+    },
+    {
+        "ticker": "META",
+        "date": "2024-01-15",
+        "headline": "Meta's ad revenue rebounds strongly driven by AI recommendation engine"
+    },
+    {
+        "ticker": "META",
+        "date": "2024-01-16",
+        "headline": "Meta Reality Labs losses reach $4B in Q4 raising investor concerns"
+    },
+    {
+        "ticker": "META",
+        "date": "2024-01-17",
+        "headline": "Meta launches open-source Llama 3 model challenging OpenAI"
+    },
+    {
+        "ticker": "META",
+        "date": "2024-01-18",
+        "headline": "Meta faces regulatory crackdown in EU over data privacy violations"
+    },
+    {
+        "ticker": "GOOGL",
+        "date": "2024-01-15",
+        "headline": "Google Cloud turns profitable for first time in company history"
+    },
+    {
+        "ticker": "GOOGL",
+        "date": "2024-01-16",
+        "headline": "Google's Gemini AI model faces criticism for inaccurate outputs"
+    },
+    {
+        "ticker": "GOOGL",
+        "date": "2024-01-17",
+        "headline": "Alphabet announces first-ever dividend payment to shareholders"
+    },
+    {
+        "ticker": "GOOGL",
+        "date": "2024-01-18",
+        "headline": "DOJ proposes breaking up Google in landmark antitrust case"
+    },
+    {
+        "ticker": "XOM",
+        "date": "2024-01-15",
+        "headline": "ExxonMobil completes $60B acquisition of Pioneer Natural Resources"
+    },
+    {
+        "ticker": "XOM",
+        "date": "2024-01-16",
+        "headline": "Oil prices surge on Middle East tensions benefiting ExxonMobil"
+    },
+    {
+        "ticker": "XOM",
+        "date": "2024-01-17",
+        "headline": "ExxonMobil faces shareholder revolt over climate change strategy"
+    },
+    {
+        "ticker": "XOM",
+        "date": "2024-01-18",
+        "headline": "ExxonMobil increases quarterly dividend by 5%"
+    },
+    {
+        "ticker": "PFE",
+        "date": "2024-01-15",
+        "headline": "Pfizer COVID vaccine revenue plummets 70% as pandemic demand fades"
+    },
+    {
+        "ticker": "PFE",
+        "date": "2024-01-16",
+        "headline": "Pfizer's new cancer drug shows promising Phase 3 trial results"
+    },
+    {
+        "ticker": "PFE",
+        "date": "2024-01-17",
+        "headline": "Pfizer announces $3.5B cost-cutting program to offset revenue decline"
+    },
+    {
+        "ticker": "PFE",
+        "date": "2024-01-18",
+        "headline": "Pfizer acquires oncology biotech for $43B to diversify pipeline"
+    }
+]
