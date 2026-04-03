@@ -130,6 +130,22 @@ Each question is designed to take you one step closer to building your own LLM.
 25. Chunk Textual Data for Dense Passage Retrieval *(Coming Soon)*
 26. Implement Large scale Training => 5D Parallelism *(Coming Soon)*
 
+## Paper Reimplementations
+
+Practice by reimplementing key ideas from research papers:
+
+1. [GLP Meta-Model](papers/glp-meta-model/) - GLP meta-model paper implementation
+2. [MFA Local Geometry](papers/mfa-local-geometry/) - MFA local geometry paper implementation
+3. [Doc-to-LoRA](papers/doc-to-lora/doc-to-lora-Question.ipynb) [(Solution)](papers/doc-to-lora/doc-to-lora.ipynb) - Hypernetwork that generates LoRA adapters from documents in a single forward pass ([Charakorn et al., 2026](https://arxiv.org/abs/2602.15902))
+   - [Doc-to-LoRA v2](papers/doc-to-lora/doc-to-lora-2-Question.ipynb) [(Solution)](papers/doc-to-lora/doc-to-lora-2.ipynb) - 30-min focused rebuild: Perceiver aggregator, top-K distillation loss, HyperLoRA head, end-to-end pipeline
+4. [Concept Influence](papers/concept-influence/concept-influence-Question.ipynb) [(Solution)](papers/concept-influence/concept-influence.ipynb) - Training data attribution via linear probes and Vector Filter ([Kowal et al., 2025](https://arxiv.org/abs/2602.14869))
+5. [TRAK](papers/trak/trak-Question.ipynb) [(Solution)](papers/trak/trak.ipynb) - Scalable training data attribution using random projections and the Johnson-Lindenstrauss lemma ([Park et al., 2023](https://arxiv.org/abs/2303.14186))
+6. [Influence Functions](papers/influence-functions/influence-functions-Question.ipynb) [(Solution)](papers/influence-functions/influence-functions.ipynb) - Classical training data attribution via inverse-Hessian vector products ([Koh & Liang, 2017](https://arxiv.org/abs/1703.04730))
+7. [TrackStar](papers/trackstar/trackstar-Question.ipynb) [(Solution)](papers/trackstar/trackstar.ipynb) - Scalable influence and fact tracing for LLM pretraining via EKFAC preconditioning, preconditioner mixing, and FAISS indexing ([Chang et al., 2024](https://arxiv.org/abs/2410.17413))
+8. [EKFAC](papers/ekfac/ekfac-Question.ipynb) [(Solution)](papers/ekfac/ekfac.ipynb) - Eigenvalue-corrected Kronecker-Factored Approximate Curvature for efficient Hessian approximation in influence functions ([George et al., NeurIPS 2018](https://arxiv.org/abs/1806.03884))
+
+---
+
 **What's cool? 🚀**
 - **Diverse Questions**: Covers beginner to advanced PyTorch concepts (e.g., tensors, autograd, CNNs, GANs, and more).
 - **Guided Learning**: Includes incomplete code blocks (`...` and `#TODO`) for hands-on practice along with Answers
