@@ -329,3 +329,155 @@ Per the README:
 - Test solutions against provided solution files
 - Focus on understanding core PyTorch concepts deeply
 - Problems are designed for hands-on practice, not just reading solutions
+
+## User-Implemented Functions/Methods (Running List)
+
+This section tracks every PyTorch/Python API the student has been asked to implement or use across all `*-Question.ipynb` files. Future problem hints can omit documentation for functions already listed here. **Do NOT remove entries — only add new ones.**
+
+### Torch Tensor Creation & Manipulation
+- `torch.zeros()` — create zero-filled tensor (MHA, GQA, KV-Cache, Temperature)
+- `torch.ones()` — create ones-filled tensor (Temperature)
+- `torch.randn()` — create random normal tensor (MHA, GQA, KV-Cache, LoRA, KL-Div)
+- `torch.randint()` — create random integer tensor (KL-Div)
+- `torch.arange()` — create sequential integer range tensor (Sinusoidal PE, RoPE, MHA, GQA)
+- `torch.tensor()` — construct tensor from Python data (MHA, Beam Search, Top-K/P, Contrastive)
+- `torch.eye()` — identity matrix (LoRA)
+- `torch.full_like()` — tensor filled with constant, same shape as input (Top-K/P)
+- `torch.cat()` — concatenate tensors along a dimension (Attention, MHA, GQA, Beam Search)
+- `torch.stack()` — stack tensors along a new dimension
+- `torch.reshape()` — reshape tensor (Attention, RoPE)
+- `torch.view()` — reshape tensor (Attention)
+- `torch.transpose()` — swap two dimensions (Attention)
+- `torch.permute()` — reorder all dimensions (Attention)
+- `torch.unsqueeze()` — add a dimension (Sinusoidal PE)
+- `torch.squeeze()` — remove size-1 dimensions
+- `torch.repeat_interleave()` — repeat elements along a dimension (MHA, GQA)
+- `torch.expand()` — broadcast-expand tensor
+- `torch.clamp()` — clamp values to a range (KL-Div, Quantization, Temperature)
+- `torch.where()` — conditional element-wise selection (Attention)
+- `torch.masked_fill()` — fill masked positions with a value (MHA, GQA, Top-K/P)
+- `torch.triu()` — upper triangular mask (Attention, MHA, GQA)
+- `torch.concatenate()` — alias for `torch.cat` used in RoPE
+
+### Torch Math Operations
+- `torch.pow()` — element-wise power (RMSNorm)
+- `torch.sqrt()` — element-wise square root (RMSNorm, Attention, KV-Cache)
+- `torch.exp()` — element-wise exponential (Sinusoidal PE, RoPE, KL-Div, Contrastive)
+- `torch.log()` — element-wise natural log (Sinusoidal PE, RoPE, KL-Div, Beam Search)
+- `torch.sin()` — element-wise sine (Sinusoidal PE, RoPE)
+- `torch.cos()` — element-wise cosine (Sinusoidal PE, RoPE)
+- `torch.abs()` — element-wise absolute value (Quantization)
+- `torch.sum()` — sum reduction (RMSNorm, KL-Div, Contrastive)
+- `torch.mean()` — mean reduction (RMSNorm)
+- `torch.max()` — max reduction or element-wise max (KL-Div, Quantization, Temperature)
+- `torch.min()` — min reduction (Quantization)
+- `torch.amax()` — max along a dimension with keepdim support (Quantization)
+- `torch.div()` — element-wise division (KV-Cache, Quantization, Temperature)
+- `torch.sub()` — element-wise subtraction (Quantization)
+- `torch.add()` — element-wise addition (LoRA)
+- `torch.matmul()` — matrix multiplication (Attention, KV-Cache, LoRA)
+- `torch.einsum()` — Einstein summation (Sinusoidal PE, RoPE)
+- `torch.softmax()` — softmax along a dimension (Attention, GQA)
+- `torch.multinomial()` — sample from multinomial distribution (Temperature, Top-K/P, Beam Search, Contrastive)
+- `torch.topk()` — top-k values and indices (Top-K/P, Beam Search)
+- `torch.sort()` — sort tensor elements (Top-K/P)
+- `torch.cumsum()` — cumulative sum (Top-K/P)
+
+### torch.nn Modules
+- `nn.Module` — base class for all neural network modules (all problems)
+- `nn.Parameter` — learnable parameter wrapper (RMSNorm, Sinusoidal PE, MHA, GQA, LoRA)
+- `nn.Linear` — fully-connected linear layer (Attention, MHA, GQA, KV-Cache, KL-Div, LoRA, Quantization, Contrastive)
+- `nn.Softmax` — softmax activation module (Attention)
+- `nn.ReLU` — ReLU activation module (KL-Div, Contrastive)
+- `nn.Sequential` — sequential container (KL-Div, Contrastive)
+- `nn.CrossEntropyLoss` — cross-entropy loss (KL-Div, Contrastive)
+- `nn.MultiheadAttention` — PyTorch built-in MHA (MHA validation)
+- `register_buffer()` — register non-parameter tensor on module (Sinusoidal PE, RoPE, Quantization)
+- `nn.init.kaiming_uniform_()` — Kaiming uniform initialization (LoRA)
+- `nn.init.zeros_()` — zero initialization (LoRA)
+
+### torch.nn.functional
+- `F.softmax()` — functional softmax (Attention, MHA, GQA, KV-Cache, KL-Div, Temperature, Top-K/P, Contrastive)
+- `F.log_softmax()` — log of softmax (KL-Div, Beam Search)
+- `F.kl_div()` — KL divergence loss (KL-Div)
+- `F.cross_entropy()` — cross-entropy loss (KL-Div)
+- `F.relu()` — ReLU activation (Quantization)
+- `F.mse_loss()` — mean squared error loss (Quantization)
+- `F.linear()` — functional linear transform (MHA, KV-Cache)
+- `F.normalize()` — normalize along a dimension (Contrastive)
+- `F.cosine_similarity()` — cosine similarity (Contrastive)
+
+### Autograd / Training
+- `torch.no_grad()` — disable gradient tracking context manager
+- `torch.optim.Adam` — Adam optimizer (KL-Div, Contrastive)
+- `.backward()` — compute gradients
+- `.step()` — update optimizer parameters
+- `.zero_grad()` — reset gradients
+- `torch.utils.data.Dataset` — abstract dataset base class (KL-Div, Contrastive)
+- `torch.utils.data.DataLoader` — iterable data loader (KL-Div, Contrastive)
+- `torch.utils.data.TensorDataset` — dataset wrapping tensors (KL-Div)
+- `torch.manual_seed()` — set random seed for reproducibility (MHA)
+
+### torch.distributions
+- `torch.distributions.Normal` — normal distribution (KL-Div)
+- `torch.distributions.kl_divergence()` — analytic KL divergence (KL-Div)
+
+### HuggingFace / Transformers
+- `AutoTokenizer.from_pretrained()` — load tokenizer (FinBERT, Finetune)
+- `AutoModelForSequenceClassification.from_pretrained()` — load classification model (FinBERT)
+- `AutoModelForCausalLM.from_pretrained()` — load causal language model (Finetune)
+- `pipeline()` — high-level task pipeline (FinBERT)
+- `TrainingArguments` — training configuration (Finetune)
+- `Trainer` — HuggingFace training loop (Finetune)
+- `datasets.Dataset.from_dict()` — create HF dataset from dict (Finetune)
+- PEFT / LoRA configuration and application (Finetune)
+
+### sentence-transformers
+- `SentenceTransformer()` — load sentence embedding model (Text Embeddings, Contrastive)
+- `.encode()` — generate sentence embeddings (Text Embeddings, Contrastive)
+
+### Standard Library
+- `math.log()` — natural logarithm (Sinusoidal PE, RoPE)
+- `math.sqrt()` — square root (Attention)
+- `collections.Counter()` — count hashable objects (BPE, SEC Filings)
+- `collections.defaultdict()` — default-value dict (BPE, Knowledge Graphs)
+- `str.replace()` — string replacement (BPE)
+- `str.split()` — string splitting (BPE)
+- `tuple()` — create tuple (BPE)
+- `zip()` — zip iterables (BPE)
+- `max()` — built-in max over iterable (BPE)
+- `time.time()` — wall-clock timer (KV-Cache)
+- `copy.deepcopy()` — deep copy object (Quantization)
+- `dataclasses.dataclass` — data class decorator (Beam Search)
+- `typing.List`, `typing.Tuple`, `typing.Optional`, `typing.Callable` — type hints (Beam Search)
+- `pathlib.Path()` — filesystem path (FinBERT, Text Embeddings)
+- `json.load()`, `json.dump()` — JSON serialization (FinBERT, Text Embeddings)
+- `re.split()`, `re.findall()` — regex operations (SEC Filings, Knowledge Graphs)
+- `requests.get()` — HTTP request (SEC Filings / EDGAR API)
+
+### pandas / numpy
+- `pandas.DataFrame()` — create DataFrame (FinBERT, Text Embeddings, SEC Filings, Knowledge Graphs)
+- `pandas.qcut()` — quantile-based binning (FinBERT, Contrastive)
+- `pandas.groupby()` / `.agg()` — group and aggregate (FinBERT)
+- `numpy.random.choice()` — random sampling (Contrastive)
+- `numpy.array()`, `numpy.stack()`, `numpy.argsort()`, `numpy.where()` — array operations
+
+### sklearn
+- `sklearn.decomposition.PCA` / `.fit_transform()` — principal component analysis (Text Embeddings, Finetune)
+- `sklearn.preprocessing.StandardScaler` / `.fit_transform()` — feature scaling (Text Embeddings)
+- `sklearn.metrics.pairwise.cosine_similarity()` — pairwise cosine similarity (Text Embeddings, Finetune)
+
+### scipy
+- `scipy.stats.f_oneway()` — one-way ANOVA F-test (Text Embeddings)
+
+### networkx (Graph ML)
+- `nx.Graph()` — undirected graph (Knowledge Graphs)
+- `nx.pagerank()` — PageRank centrality (Knowledge Graphs)
+- `nx.betweenness_centrality()` — betweenness centrality (Knowledge Graphs)
+- `nx.clustering()` / `nx.average_clustering()` — clustering coefficient (Knowledge Graphs)
+- `nx.community.greedy_modularity_communities()` — community detection (Knowledge Graphs)
+- `nx.normalized_laplacian_matrix()` — graph Laplacian (Knowledge Graphs)
+
+### Visualization
+- `matplotlib.pyplot` — general plotting (KL-Div, Temperature, Text Embeddings, FinBERT, Knowledge Graphs)
+- `seaborn` — statistical visualization
