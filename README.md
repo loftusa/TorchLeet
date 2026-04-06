@@ -144,6 +144,15 @@ Practice by reimplementing key ideas from research papers:
 7. [TrackStar](papers/trackstar/trackstar-Question.ipynb) [(Solution)](papers/trackstar/trackstar.ipynb) - Scalable influence and fact tracing for LLM pretraining via EKFAC preconditioning, preconditioner mixing, and FAISS indexing ([Chang et al., 2024](https://arxiv.org/abs/2410.17413))
 8. [EKFAC](papers/ekfac/ekfac-Question.ipynb) [(Solution)](papers/ekfac/ekfac.ipynb) - Eigenvalue-corrected Kronecker-Factored Approximate Curvature for efficient Hessian approximation in influence functions ([George et al., NeurIPS 2018](https://arxiv.org/abs/1806.03884))
 
+## Applied ML Practice
+
+Hands-on practice problems for real-world ML engineering:
+
+1. [LLM-as-Judge](practice/01-LLM-as-Judge/) - LLM evaluation as judge
+2. [Agent Eval Harness](practice/02-Agent-Eval-Harness/) - Agent evaluation harness
+3. [Codenames AI](practice/03-Codenames-AI/) - AI for Codenames board game
+4. [Safety Evaluation Pipeline](practice/04-Safety-Evaluation-Pipeline/isc-safety-eval-Question.ipynb) [(Solution)](practice/04-Safety-Evaluation-Pipeline/isc-safety-eval.ipynb) - Red-team campaign analysis pipeline based on Internal Safety Collapse ([Wu et al., 2026](https://arxiv.org/abs/2603.23509)): harm taxonomy, attack success rates, Cohen's kappa, bootstrap CIs, policy compliance gaps, campaign heatmaps, and prioritization scoring
+
 ---
 
 **What's cool? 🚀**

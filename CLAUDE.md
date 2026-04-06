@@ -4,9 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-TorchLeet is a PyTorch learning resource with two main problem sets:
+TorchLeet is a PyTorch learning resource with multiple problem sets:
 1. **torch/** - PyTorch practice problems (Basic/Easy/Medium/Hard) covering fundamental deep learning concepts
 2. **llm/** - Large Language Model implementation problems focusing on building transformer components from scratch
+3. **numerai/** - Financial ML problems applying NLP/LLM techniques to quantitative finance (Numerai tournament context)
+4. **papers/** - Paper reimplementations (research paper exercises)
+5. **practice/** - Applied ML practice problems (LLM-as-Judge, Agent Eval, Codenames AI)
 
 This is an educational repository where users solve incomplete problems by filling in missing code blocks marked with `...` or `#TODO` comments, then compare against solution files.
 
@@ -27,10 +30,40 @@ TorchLeet/
 │   ├── 05-Byte-Pair-Encoder/
 │   ├── 06-Rotary-Positional-Embedding/
 │   ├── 07-Grouped-Query-Attention/
+│   ├── 08-KV-Cache/
 │   ├── 09-KL-Divergence-Loss/
 │   ├── 10-Create-Embeddings-out-of-an-LLM/
+│   ├── 11-Temperature-Sampling/
+│   ├── 12-Top-K-Top-P-Sampling/
+│   ├── 13-Beam-Search/
+│   ├── 14-LoRA/
 │   ├── 15-SmolLM/
+│   ├── 17-Quantization/
+│   ├── 18-VLM-Attention/
 │   └── flash-attention.ipynb
+├── numerai/
+│   ├── 01-FinBERT-Sentiment-Pipeline/
+│   ├── 02-Text-Embeddings-as-Features/
+│   ├── 03-SEC-Filing-Features/
+│   ├── 04-Company-Knowledge-Graphs/
+│   ├── 05-Contrastive-Financial-Embeddings/
+│   ├── 06-LLM-Probing-Financial-Signals/
+│   ├── 07-Finetune-Financial-LLM/
+│   └── 08-Common-Crawl-Pipeline/
+├── papers/
+│   ├── concept-influence/    # Concept Influence: training data attribution via interpretability
+│   ├── influence-functions/  # Influence Functions: classical training data attribution (Koh & Liang 2017)
+│   ├── trak/                 # TRAK: scalable training data attribution via random projections
+│   ├── trackstar/            # TrackStar: scalable influence/fact tracing via EKFAC + preconditioner mixing (Chang et al. 2024)
+│   ├── ekfac/                # EKFAC: Eigenvalue-corrected Kronecker-Factored Approximate Curvature (George et al. 2018)
+│   ├── glp-meta-model/       # GLP meta-model paper implementation
+│   └── mfa-local-geometry/   # MFA local geometry paper implementation
+├── practice/
+│   ├── 01-LLM-as-Judge/      # LLM evaluation as judge
+│   ├── 02-Agent-Eval-Harness/ # Agent evaluation harness
+│   ├── 03-Codenames-AI/      # AI for Codenames board game
+│   └── 04-Safety-Evaluation-Pipeline/  # Red-team campaign analysis (ISC paper)
+└── valsai_interview/          # Interview prep scripts
 ```
 
 Each problem directory typically contains:
@@ -54,10 +87,14 @@ Each problem directory typically contains:
 
 **LLM Set Problems:**
 - Loss functions (KL Divergence for distillation, discrete and continuous variants)
-- Attention mechanisms (scaled dot-product, multi-head, grouped-query)
+- Attention mechanisms (scaled dot-product, multi-head, grouped-query, VLM attention)
 - Positional encodings (sinusoidal, RoPE)
 - Normalization layers (RMSNorm)
 - Tokenization (Byte-Pair Encoding)
+- KV Cache implementation and optimization
+- Decoding strategies (temperature sampling, top-k/top-p sampling, beam search)
+- Parameter-efficient fine-tuning (LoRA)
+- Quantization (INT8 per-channel)
 - Full model implementations (SmolLM-135M architecture)
 - Kernel optimizations (Flash Attention with Triton)
 - Knowledge distillation (teacher-student training with temperature scaling)
@@ -68,6 +105,31 @@ Each problem directory typically contains:
 - Training loops and optimization
 - Data loading and augmentation
 - Model deployment (quantization, mixed precision)
+
+**Numerai Set Problems:**
+- Financial NLP pipelines (FinBERT sentiment, text embeddings as features)
+- SEC filing feature extraction
+- Company knowledge graphs
+- Contrastive financial embeddings
+- LLM probing for financial signals
+- Financial LLM fine-tuning
+- Common Crawl data pipelines
+
+**Papers Set:**
+- GLP meta-model reimplementation
+- MFA local geometry reimplementation
+- Doc-to-LoRA: Hypernetwork-based LoRA generation from documents (Perceiver aggregator, top-K context distillation loss, chunk-and-merge for long contexts)
+- Concept Influence: Training data attribution via interpretability (linear probes as concept vectors, Vector Filter dot-product attribution, precision-recall evaluation, dataset filtering and retraining)
+- TRAK: Scalable training data attribution via random projections (per-sample gradients with torch.func.vmap, Gaussian/Rademacher random projections, Johnson-Lindenstrauss lemma verification, projected gradient features, TRAK attribution scores as dot products)
+- Influence Functions: Classical training data attribution (Koh & Liang 2017) — per-sample gradients, HVP via double backward trick, IHVP via Conjugate Gradient and LiSSA (Neumann series), influence scores validated against leave-one-out retraining (r=0.999 correlation)
+- TrackStar: Scalable influence and fact tracing for LLM pretraining (Chang et al. 2024) — Adam/Adafactor gradient normalizers, EKFAC preconditioner computation via input/output covariance eigendecomposition, damped matrix power for numerical stability, two-sided (split) preconditioning equivalence proof, preconditioner mixing with automatic lambda via eigenvalue curve intersection, FAISS index building and retrieval, full pipeline combining all components
+- EKFAC: Eigenvalue-corrected Kronecker-Factored Approximate Curvature (George et al. NeurIPS 2018) — activation covariance collection via forward hooks, gradient covariance via backward hooks, eigendecomposition of Kronecker factors, eigenvalue corrections in eigenbasis, EKFAC and KFAC inverse-Hessian vector products, comparison against full Fisher inversion on a small MLP. Based on bergson's implementation.
+
+**Practice Set:**
+- LLM-as-Judge evaluation
+- Agent evaluation harness
+- Codenames AI (board game AI)
+- Safety Evaluation Pipeline: Red-team campaign analysis based on ISC paper (Wu et al., 2026) — harm taxonomy schemas, attack success rates, per-category/vector effectiveness matrices, policy compliance gap analysis, Cohen's kappa inter-rater reliability, bootstrap confidence intervals, model comparison radar plots, campaign dashboard heatmaps, temporal safety trends, and data-driven campaign prioritization scoring
 
 ## LLM Problem Ordering Philosophy
 
@@ -80,7 +142,7 @@ The LLM problem set is ordered to optimize for **interview preparation** and **l
 3. **Logical Dependencies**: Build foundational concepts progressively (Positional Embeddings before Attention)
 4. **Natural Groupings**: Related concepts together (all attention variants, all sampling methods)
 
-### Current Ordering Rationale (Problems 1-16 Implemented)
+### Current Ordering Rationale (Problems 1-18 Implemented, excluding #16)
 
 **Tier 1: Fundamentals (Problems 1-2)**
 - Start with simplest concepts to build confidence
@@ -104,16 +166,20 @@ The LLM problem set is ordered to optimize for **interview preparation** and **l
 - KL Divergence Loss (#9): Knowledge distillation and training
 - Create Embeddings (#10): Practical application of LLMs
 
-**Tier 5: Decoding Strategies (Problems 11-14 - Coming Soon)**
+**Tier 5: Decoding Strategies (Problems 11-14)**
 - Inference-time techniques for text generation
-- Temperature/Top-K/Top-P Sampling: Basic to intermediate decoding
-- Beam Search: More complex search strategy
+- Temperature Sampling (#11): Control randomness in generation
+- Top-K/Top-P Sampling (#12): Filter token distributions for quality
+- Beam Search (#13): Search-based decoding with length normalization
+- LoRA (#14): Parameter-efficient fine-tuning
 
-**Tier 6: Integration & Advanced (Problems 15-26)**
+**Tier 6: Integration & Advanced (Problems 15-18+)**
 - Full implementations and cutting-edge techniques
 - SmolLM (#15): Integrates all previous concepts
-- Flash Attention (#16): Advanced kernel optimization
-- Quantization, LoRA, RLHF, etc.: Specialized advanced topics
+- Flash Attention (#16): Advanced kernel optimization (unnumbered, standalone notebook)
+- Quantization (#17): INT8 per-channel quantization
+- VLM Attention (#18): Vision-Language Model attention mechanisms
+- QLoRA, MoE, SFT/RLHF/DPO, etc.: Planned advanced topics
 
 ### Key Interview Statistics
 
@@ -302,25 +368,32 @@ The README lists several problems marked as *(Coming Soon)* that don't yet have 
 - Hard #11-14: CLIP Linear Probe, Cross-Modal Visualization, Vision Transformer, VAE
 
 **LLM Set - Missing:**
-- #5: Predictive Prefill with Speculative Decoding
-- #9: KV Cache in Multi-Head Attention
-- #14-26: Advanced topics (Quantization/GPTQ, Beam Search, Sampling strategies, LoRA/QLoRA, MoE, SFT/RLHF/DPO, Continuous Batching, Dense Passage Retrieval, 5D Parallelism)
+- #16: Flash Attention is a standalone notebook (not in numbered directory)
+- #18: QLoRA (Quantized LoRA)
+- #19: Predictive Prefill with Speculative Decoding
+- #20: Mixture of Experts
+- #21-23: SFT, RLHF, DPO
+- #24: Continuous Batching
+- #25: Dense Passage Retrieval
+- #26: 5D Parallelism
 
 When adding new problems, follow the existing pattern:
-- Create a directory in `torch/<difficulty>/` or `llm/`
-- Include both `-Question.ipynb` and solution files
+- Create a directory in `torch/<difficulty>/`, `llm/`, `numerai/`, `papers/`, or `practice/`
+- Include both `-Question.ipynb` and solution (`_SOLN.ipynb` or solution `.ipynb`) files
 - Update README.md to link to the new problem
 - Test that the solution works before committing
 
 ## Dependencies
 
-No formal requirements file exists. Install dependencies as needed:
-- Core: `torch`, `torchvision`, `numpy`
-- LLM problems: `transformers`, `datasets`, `triton` (for flash-attention)
-- Utilities: `tensorboard`, `jupyter`
-- Package management: Use `uv` for this project
+Managed via `pyproject.toml` with `uv`. Key dependencies:
+- Core: `torch>=2.9.1`, `numpy>=2.4.0`, `jaxtyping>=0.3.9`
+- LLM/NLP: `transformers>=4.57.3`, `datasets>=4.4.2`, `huggingface-hub>=1.3.4`, `sentence-transformers>=5.2.2`, `nltk>=3.9.2`
+- Interpretability: `nnsight>=0.5.15`, `nnterp>=1.2.2`
+- Visualization: `matplotlib>=3.10.8`, `seaborn>=0.13.2`
+- ML: `scikit-learn>=1.8.0`
+- Utilities: `jupyter>=1.1.1`, `nbconvert>=7.16.6`
 
-Install PyTorch from: https://pytorch.org/get-started/locally/
+Install with: `uv sync`
 
 ## Development Philosophy
 
@@ -332,152 +405,52 @@ Per the README:
 
 ## User-Implemented Functions/Methods (Running List)
 
-This section tracks every PyTorch/Python API the student has been asked to implement or use across all `*-Question.ipynb` files. Future problem hints can omit documentation for functions already listed here. **Do NOT remove entries — only add new ones.**
+Functions the user has already implemented in Question notebooks. When creating new problems, do NOT hint these — force recall from memory.
 
-### Torch Tensor Creation & Manipulation
-- `torch.zeros()` — create zero-filled tensor (MHA, GQA, KV-Cache, Temperature)
-- `torch.ones()` — create ones-filled tensor (Temperature)
-- `torch.randn()` — create random normal tensor (MHA, GQA, KV-Cache, LoRA, KL-Div)
-- `torch.randint()` — create random integer tensor (KL-Div)
-- `torch.arange()` — create sequential integer range tensor (Sinusoidal PE, RoPE, MHA, GQA)
-- `torch.tensor()` — construct tensor from Python data (MHA, Beam Search, Top-K/P, Contrastive)
-- `torch.eye()` — identity matrix (LoRA)
-- `torch.full_like()` — tensor filled with constant, same shape as input (Top-K/P)
-- `torch.cat()` — concatenate tensors along a dimension (Attention, MHA, GQA, Beam Search)
-- `torch.stack()` — stack tensors along a new dimension
-- `torch.reshape()` — reshape tensor (Attention, RoPE)
-- `torch.view()` — reshape tensor (Attention)
-- `torch.transpose()` — swap two dimensions (Attention)
-- `torch.permute()` — reorder all dimensions (Attention)
-- `torch.unsqueeze()` — add a dimension (Sinusoidal PE)
-- `torch.squeeze()` — remove size-1 dimensions
-- `torch.repeat_interleave()` — repeat elements along a dimension (MHA, GQA)
-- `torch.expand()` — broadcast-expand tensor
-- `torch.clamp()` — clamp values to a range (KL-Div, Quantization, Temperature)
-- `torch.where()` — conditional element-wise selection (Attention)
-- `torch.masked_fill()` — fill masked positions with a value (MHA, GQA, Top-K/P)
-- `torch.triu()` — upper triangular mask (Attention, MHA, GQA)
-- `torch.concatenate()` — alias for `torch.cat` used in RoPE
+**Torch Tensor Creation & Manipulation:**
+`torch.arange`, `torch.ones`, `torch.zeros`, `torch.randn`, `torch.randn_like`, `torch.ones_like`, `torch.zeros_like`, `torch.full_like`, `torch.cat`, `torch.stack`, `torch.full`, `torch.linspace`, `torch.tensor`, `torch.where`, `torch.randint`, `torch.Generator`, `.view()`, `.transpose()`, `.permute()`, `.unsqueeze()`, `.chunk()`, `.clone()`, `.flatten()`, `.reshape()`, `.to()` (dtype)
 
-### Torch Math Operations
-- `torch.pow()` — element-wise power (RMSNorm)
-- `torch.sqrt()` — element-wise square root (RMSNorm, Attention, KV-Cache)
-- `torch.exp()` — element-wise exponential (Sinusoidal PE, RoPE, KL-Div, Contrastive)
-- `torch.log()` — element-wise natural log (Sinusoidal PE, RoPE, KL-Div, Beam Search)
-- `torch.sin()` — element-wise sine (Sinusoidal PE, RoPE)
-- `torch.cos()` — element-wise cosine (Sinusoidal PE, RoPE)
-- `torch.abs()` — element-wise absolute value (Quantization)
-- `torch.sum()` — sum reduction (RMSNorm, KL-Div, Contrastive)
-- `torch.mean()` — mean reduction (RMSNorm)
-- `torch.max()` — max reduction or element-wise max (KL-Div, Quantization, Temperature)
-- `torch.min()` — min reduction (Quantization)
-- `torch.amax()` — max along a dimension with keepdim support (Quantization)
-- `torch.div()` — element-wise division (KV-Cache, Quantization, Temperature)
-- `torch.sub()` — element-wise subtraction (Quantization)
-- `torch.add()` — element-wise addition (LoRA)
-- `torch.matmul()` — matrix multiplication (Attention, KV-Cache, LoRA)
-- `torch.einsum()` — Einstein summation (Sinusoidal PE, RoPE)
-- `torch.softmax()` — softmax along a dimension (Attention, GQA)
-- `torch.multinomial()` — sample from multinomial distribution (Temperature, Top-K/P, Beam Search, Contrastive)
-- `torch.topk()` — top-k values and indices (Top-K/P, Beam Search)
-- `torch.sort()` — sort tensor elements (Top-K/P)
-- `torch.cumsum()` — cumulative sum (Top-K/P)
+**Torch Math Operations:**
+`torch.sqrt`, `torch.rsqrt`, `torch.exp`, `torch.log`, `torch.sin`, `torch.cos`, `torch.round`, `torch.clamp`, `torch.einsum`, `torch.topk`, `torch.sort`, `torch.cumsum`, `torch.argsort`, `torch.masked_fill`, `torch.triu`, `torch.repeat_interleave`, `torch.multinomial`, `torch.gather`, `torch.logsumexp`, `torch.cdist`, `torch.randperm`, `torch.diag`, `torch.mv`, `torch.trapezoid`, `torch.allclose`, `.pow()`, `.mean()`, `.abs()`, `.max()`, `.min()`, `.amax()`, `.exp()`, `.log()`, `@` (matmul)
 
-### torch.nn Modules
-- `nn.Module` — base class for all neural network modules (all problems)
-- `nn.Parameter` — learnable parameter wrapper (RMSNorm, Sinusoidal PE, MHA, GQA, LoRA)
-- `nn.Linear` — fully-connected linear layer (Attention, MHA, GQA, KV-Cache, KL-Div, LoRA, Quantization, Contrastive)
-- `nn.Softmax` — softmax activation module (Attention)
-- `nn.ReLU` — ReLU activation module (KL-Div, Contrastive)
-- `nn.Sequential` — sequential container (KL-Div, Contrastive)
-- `nn.CrossEntropyLoss` — cross-entropy loss (KL-Div, Contrastive)
-- `nn.MultiheadAttention` — PyTorch built-in MHA (MHA validation)
-- `register_buffer()` — register non-parameter tensor on module (Sinusoidal PE, RoPE, Quantization)
-- `nn.init.kaiming_uniform_()` — Kaiming uniform initialization (LoRA)
-- `nn.init.zeros_()` — zero initialization (LoRA)
+**torch.nn Modules:**
+`nn.Linear`, `nn.Parameter`, `nn.Embedding`, `nn.Conv2d`, `nn.Sequential`, `nn.ReLU`, `nn.GELU`, `nn.SiLU`, `nn.LayerNorm`, `nn.MultiheadAttention`, `nn.ModuleList`, `nn.ModuleDict`, `nn.CrossEntropyLoss`, `nn.init.kaiming_uniform_`, `self.register_buffer`
 
-### torch.nn.functional
-- `F.softmax()` — functional softmax (Attention, MHA, GQA, KV-Cache, KL-Div, Temperature, Top-K/P, Contrastive)
-- `F.log_softmax()` — log of softmax (KL-Div, Beam Search)
-- `F.kl_div()` — KL divergence loss (KL-Div)
-- `F.cross_entropy()` — cross-entropy loss (KL-Div)
-- `F.relu()` — ReLU activation (Quantization)
-- `F.mse_loss()` — mean squared error loss (Quantization)
-- `F.linear()` — functional linear transform (MHA, KV-Cache)
-- `F.normalize()` — normalize along a dimension (Contrastive)
-- `F.cosine_similarity()` — cosine similarity (Contrastive)
+**torch.nn.functional:**
+`F.softmax`, `F.log_softmax`, `F.relu`, `F.silu`, `F.linear`, `F.normalize`, `F.kl_div`, `F.cross_entropy`, `F.mse_loss`, `F.binary_cross_entropy_with_logits`, `F.dropout`
 
-### Autograd / Training
-- `torch.no_grad()` — disable gradient tracking context manager
-- `torch.optim.Adam` — Adam optimizer (KL-Div, Contrastive)
-- `.backward()` — compute gradients
-- `.step()` — update optimizer parameters
-- `.zero_grad()` — reset gradients
-- `torch.utils.data.Dataset` — abstract dataset base class (KL-Div, Contrastive)
-- `torch.utils.data.DataLoader` — iterable data loader (KL-Div, Contrastive)
-- `torch.utils.data.TensorDataset` — dataset wrapping tensors (KL-Div)
-- `torch.manual_seed()` — set random seed for reproducibility (MHA)
+**Autograd / Training:**
+`torch.no_grad()`, `optimizer.zero_grad()`, `loss.backward()`, `optimizer.step()`, `model.zero_grad()`
 
-### torch.distributions
-- `torch.distributions.Normal` — normal distribution (KL-Div)
-- `torch.distributions.kl_divergence()` — analytic KL divergence (KL-Div)
+**Torch Distributions:**
+`torch.distributions.Normal`, `torch.distributions.kl_divergence`
 
-### HuggingFace / Transformers
-- `AutoTokenizer.from_pretrained()` — load tokenizer (FinBERT, Finetune)
-- `AutoModelForSequenceClassification.from_pretrained()` — load classification model (FinBERT)
-- `AutoModelForCausalLM.from_pretrained()` — load causal language model (Finetune)
-- `pipeline()` — high-level task pipeline (FinBERT)
-- `TrainingArguments` — training configuration (Finetune)
-- `Trainer` — HuggingFace training loop (Finetune)
-- `datasets.Dataset.from_dict()` — create HF dataset from dict (Finetune)
-- PEFT / LoRA configuration and application (Finetune)
+**Linear Algebra:**
+`torch.linalg.eigvalsh`, `torch.linalg.eigh`, `torch.linalg.solve`
 
-### sentence-transformers
-- `SentenceTransformer()` — load sentence embedding model (Text Embeddings, Contrastive)
-- `.encode()` — generate sentence embeddings (Text Embeddings, Contrastive)
+**Functional Transforms:**
+`torch.func.grad`, `torch.func.vmap`, `torch.func.functional_call`
 
-### Standard Library
-- `math.log()` — natural logarithm (Sinusoidal PE, RoPE)
-- `math.sqrt()` — square root (Attention)
-- `collections.Counter()` — count hashable objects (BPE, SEC Filings)
-- `collections.defaultdict()` — default-value dict (BPE, Knowledge Graphs)
-- `str.replace()` — string replacement (BPE)
-- `str.split()` — string splitting (BPE)
-- `tuple()` — create tuple (BPE)
-- `zip()` — zip iterables (BPE)
-- `max()` — built-in max over iterable (BPE)
-- `time.time()` — wall-clock timer (KV-Cache)
-- `copy.deepcopy()` — deep copy object (Quantization)
-- `dataclasses.dataclass` — data class decorator (Beam Search)
-- `typing.List`, `typing.Tuple`, `typing.Optional`, `typing.Callable` — type hints (Beam Search)
-- `pathlib.Path()` — filesystem path (FinBERT, Text Embeddings)
-- `json.load()`, `json.dump()` — JSON serialization (FinBERT, Text Embeddings)
-- `re.split()`, `re.findall()` — regex operations (SEC Filings, Knowledge Graphs)
-- `requests.get()` — HTTP request (SEC Filings / EDGAR API)
+**Autograd (Low-level):**
+`torch.autograd.grad`
 
-### pandas / numpy
-- `pandas.DataFrame()` — create DataFrame (FinBERT, Text Embeddings, SEC Filings, Knowledge Graphs)
-- `pandas.qcut()` — quantile-based binning (FinBERT, Contrastive)
-- `pandas.groupby()` / `.agg()` — group and aggregate (FinBERT)
-- `numpy.random.choice()` — random sampling (Contrastive)
-- `numpy.array()`, `numpy.stack()`, `numpy.argsort()`, `numpy.where()` — array operations
+**Hooks:**
+`module.register_forward_hook`, `module.register_full_backward_hook`
 
-### sklearn
-- `sklearn.decomposition.PCA` / `.fit_transform()` — principal component analysis (Text Embeddings, Finetune)
-- `sklearn.preprocessing.StandardScaler` / `.fit_transform()` — feature scaling (Text Embeddings)
-- `sklearn.metrics.pairwise.cosine_similarity()` — pairwise cosine similarity (Text Embeddings, Finetune)
+**einops:**
+`einops.rearrange`, `einops.repeat`, `einops.einsum`
 
-### scipy
-- `scipy.stats.f_oneway()` — one-way ANOVA F-test (Text Embeddings)
+**HuggingFace:**
+`AutoTokenizer.from_pretrained`, `AutoModelForSequenceClassification.from_pretrained`, `AutoModelForCausalLM.from_pretrained`, `pipeline()`, `TrainingArguments`, `Trainer`, `datasets.load_dataset`, `SentenceTransformer`
 
-### networkx (Graph ML)
-- `nx.Graph()` — undirected graph (Knowledge Graphs)
-- `nx.pagerank()` — PageRank centrality (Knowledge Graphs)
-- `nx.betweenness_centrality()` — betweenness centrality (Knowledge Graphs)
-- `nx.clustering()` / `nx.average_clustering()` — clustering coefficient (Knowledge Graphs)
-- `nx.community.greedy_modularity_communities()` — community detection (Knowledge Graphs)
-- `nx.normalized_laplacian_matrix()` — graph Laplacian (Knowledge Graphs)
+**Python Standard Library:**
+`collections.Counter`, `collections.defaultdict`, `dataclasses.dataclass`, `functools.cache`, `copy.deepcopy`, `re`, `enum.Enum`
 
-### Visualization
-- `matplotlib.pyplot` — general plotting (KL-Div, Temperature, Text Embeddings, FinBERT, Knowledge Graphs)
-- `seaborn` — statistical visualization
+**FAISS:**
+`faiss.IndexFlatIP`
+
+**NumPy Interop:**
+`np.ascontiguousarray`
+
+**Scientific Python:**
+`sklearn.decomposition.PCA`, `sklearn.metrics.roc_auc_score`, `scipy.stats.f_oneway`, `scipy.cluster.hierarchy.linkage`, `scipy.cluster.hierarchy.fcluster`
