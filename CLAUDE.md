@@ -411,7 +411,7 @@ Functions the user has already implemented in Question notebooks. When creating 
 `torch.arange`, `torch.ones`, `torch.zeros`, `torch.randn`, `torch.randn_like`, `torch.ones_like`, `torch.zeros_like`, `torch.full_like`, `torch.cat`, `torch.stack`, `torch.full`, `torch.linspace`, `torch.tensor`, `torch.where`, `torch.randint`, `torch.Generator`, `.view()`, `.transpose()`, `.permute()`, `.unsqueeze()`, `.chunk()`, `.clone()`, `.flatten()`, `.reshape()`, `.to()` (dtype), `.squeeze()`, `.contiguous()`, `.detach()`, `.argmax()`, `.size()`, `.sum()`, `.scatter_()`, `.bool()`, `.float()`, `.item()`, `.expand()`, `.unbind()`
 
 **Torch Math Operations:**
-`torch.sqrt`, `torch.rsqrt`, `torch.exp`, `torch.log`, `torch.sin`, `torch.cos`, `torch.round`, `torch.clamp`, `torch.einsum`, `torch.topk`, `torch.sort`, `torch.cumsum`, `torch.argsort`, `torch.masked_fill`, `torch.triu`, `torch.repeat_interleave`, `torch.multinomial`, `torch.gather`, `torch.logsumexp`, `torch.cdist`, `torch.randperm`, `torch.diag`, `torch.mv`, `torch.trapezoid`, `torch.allclose`, `.pow()`, `.mean()`, `.abs()`, `.max()`, `.min()`, `.amax()`, `.exp()`, `.log()`, `@` (matmul), `torch.tanh`, `torch.sigmoid`, `torch.bmm`, `torch.outer`, `torch.max` (function form with dim arg)
+`torch.sqrt`, `torch.rsqrt`, `torch.exp`, `torch.log`, `torch.sin`, `torch.cos`, `torch.round`, `torch.clamp`, `torch.einsum`, `torch.topk`, `torch.sort`, `torch.cumsum`, `torch.argsort`, `torch.masked_fill`, `torch.triu`, `torch.repeat_interleave`, `torch.multinomial`, `torch.gather`, `torch.logsumexp`, `torch.cdist`, `torch.randperm`, `torch.diag`, `torch.mv`, `torch.trapezoid`, `torch.allclose`, `.pow()`, `.mean()`, `.abs()`, `.max()`, `.min()`, `.amax()`, `.exp()`, `.log()`, `@` (matmul), `torch.tanh`, `torch.sigmoid`, `torch.bmm`, `torch.outer`, `torch.max` (function form with dim arg), `torch.eye`
 
 **torch.nn Modules:**
 `nn.Linear`, `nn.Parameter`, `nn.Embedding`, `nn.Conv2d`, `nn.Sequential`, `nn.ReLU`, `nn.GELU`, `nn.SiLU`, `nn.LayerNorm`, `nn.MultiheadAttention`, `nn.ModuleList`, `nn.ModuleDict`, `nn.CrossEntropyLoss`, `nn.init.kaiming_uniform_`, `self.register_buffer`, `nn.RNN`, `nn.LSTM`, `nn.MaxPool2d`, `nn.ConvTranspose2d`, `nn.Conv3d`, `nn.ConvTranspose3d`, `nn.LeakyReLU`, `nn.Sigmoid`, `nn.Tanh`, `nn.BCELoss`, `nn.MSELoss`, `nn.AdaptiveAvgPool2d`, `nn.Dropout`, `nn.init.kaiming_normal_`, `nn.init.xavier_normal_`, `nn.init.xavier_uniform_`, `nn.init.zeros_`, `nn.init.normal_`, `nn.init.constant_`
@@ -420,7 +420,7 @@ Functions the user has already implemented in Question notebooks. When creating 
 `F.softmax`, `F.log_softmax`, `F.relu`, `F.silu`, `F.linear`, `F.normalize`, `F.kl_div`, `F.cross_entropy`, `F.mse_loss`, `F.binary_cross_entropy_with_logits`, `F.dropout`, `F.scaled_dot_product_attention`, `F.unfold`, `F.pad`
 
 **Autograd / Training:**
-`torch.no_grad()`, `optimizer.zero_grad()`, `loss.backward()`, `optimizer.step()`, `model.zero_grad()`, `torch.optim.Adam`, `torch.optim.SGD`, `torch.save()`, `torch.load()`, `model.state_dict()`, `model.load_state_dict()`, `model.apply()`, `model.parameters()`, `model.named_children()`, `.requires_grad_(False)`
+`torch.no_grad()`, `optimizer.zero_grad()`, `loss.backward()`, `optimizer.step()`, `model.zero_grad()`, `torch.optim.Adam`, `torch.optim.SGD`, `torch.save()`, `torch.load()`, `model.state_dict()`, `model.load_state_dict()`, `model.apply()`, `model.parameters()`, `model.named_children()`, `.requires_grad_(False)`, `model.eval()`, `torch.optim.lr_scheduler.CosineAnnealingLR`
 
 **Custom Autograd (torch.autograd.Function):**
 `torch.autograd.Function`, `ctx.save_for_backward()`, `ctx.saved_tensors`, `Function.apply()`
@@ -429,7 +429,7 @@ Functions the user has already implemented in Question notebooks. When creating 
 `torch.distributions.Normal`, `torch.distributions.kl_divergence`
 
 **Linear Algebra:**
-`torch.linalg.eigvalsh`, `torch.linalg.eigh`, `torch.linalg.solve`
+`torch.linalg.eigvalsh`, `torch.linalg.eigh`, `torch.linalg.solve`, `torch.linalg.slogdet`
 
 **Functional Transforms:**
 `torch.func.grad`, `torch.func.vmap`, `torch.func.functional_call`
@@ -459,22 +459,40 @@ Functions the user has already implemented in Question notebooks. When creating 
 `einops.rearrange`, `einops.repeat`, `einops.einsum`
 
 **HuggingFace:**
-`AutoTokenizer.from_pretrained`, `AutoModelForSequenceClassification.from_pretrained`, `AutoModelForCausalLM.from_pretrained`, `pipeline()`, `TrainingArguments`, `Trainer`, `datasets.load_dataset`, `SentenceTransformer`
+`AutoTokenizer.from_pretrained`, `AutoModelForSequenceClassification.from_pretrained`, `AutoModelForCausalLM.from_pretrained`, `pipeline()`, `TrainingArguments`, `Trainer`, `datasets.load_dataset`, `SentenceTransformer`, `datasets.Dataset.from_dict()`, `dataset.map(batched=True)`
 
 **Python Standard Library:**
-`collections.Counter`, `collections.defaultdict`, `dataclasses.dataclass`, `functools.cache`, `copy.deepcopy`, `re`, `enum.Enum`, `math.log`, `math.sqrt`, `typing.Optional`, `typing.Tuple`, `typing.List`, `typing.Callable`, `time.time()`
+`collections.Counter`, `collections.defaultdict`, `dataclasses.dataclass`, `dataclasses.field`, `functools.cache`, `copy.deepcopy`, `re`, `re.sub`, `re.findall`, `re.search`, `re.split`, `enum.Enum`, `enum.auto`, `math.log`, `math.sqrt`, `math.ceil`, `typing.Optional`, `typing.Tuple`, `typing.List`, `typing.Callable`, `typing.Dict`, `time.time()`, `json.load()`, `pathlib.Path`, `urllib.parse.urlparse()`, `datetime.strptime()`, `datetime.timedelta`, `random.seed()`, `random.shuffle()`, `random.randrange()`, `statistics.mode()`
 
 **Python Builtins:**
-`isinstance()`, `setattr()`, `max(iterable, key=...)`, `min(iterable, key=...)`
+`isinstance()`, `setattr()`, `max(iterable, key=...)`, `min(iterable, key=...)`, `sorted(iterable, key=..., reverse=True)`
 
 **FAISS:**
 `faiss.IndexFlatIP`
 
-**NumPy Interop:**
-`np.ascontiguousarray`, `np.transpose`
+**NumPy:**
+`np.ascontiguousarray`, `np.transpose`, `np.stack`, `np.argsort`, `np.argmax`, `np.argpartition`, `np.partition`, `np.zeros`, `np.array`, `np.mean`, `np.percentile`, `np.exp`, `np.average`, `np.log2`, `np.linspace`, `np.concatenate`, `np.clip`, `np.random.seed`, `np.random.choice`, `np.linalg.eigh`, `np.trace`
 
 **Pandas:**
-`pd.read_csv`, `pd.DataFrame`
+`pd.read_csv`, `pd.DataFrame`, `df.groupby().agg()`, `df.groupby().rolling()`, `.reset_index()`, `.dropna()`, `df["col"].map()`, `df.diff()`, `pd.qcut()`
+
+**Visualization:**
+`plt.bar()`, `plt.subplots()`, `plt.figure()`, `plt.savefig()`, `plt.colorbar()`, `ax.plot()`, `ax.fill()`, `ax.set_xticks()`, `ax.set_xticklabels()`, `sns.heatmap()`
 
 **Scientific Python:**
-`sklearn.decomposition.PCA`, `sklearn.metrics.roc_auc_score`, `scipy.stats.f_oneway`, `scipy.cluster.hierarchy.linkage`, `scipy.cluster.hierarchy.fcluster`
+`sklearn.decomposition.PCA`, `sklearn.metrics.roc_auc_score`, `sklearn.metrics.pairwise.cosine_similarity`, `sklearn.preprocessing.StandardScaler`, `scipy.stats.f_oneway`, `scipy.cluster.hierarchy.linkage`, `scipy.cluster.hierarchy.fcluster`, `requests.get()`
+
+**networkx:**
+`nx.Graph()`, `G.add_edge()`, `G.add_node()`, `nx.pagerank()`, `nx.betweenness_centrality()`, `nx.clustering()`, `nx.degree_centrality()`, `nx.community.greedy_modularity_communities()`, `nx.spring_layout()`, `nx.draw_networkx_nodes()`, `nx.draw_networkx_edges()`, `nx.draw_networkx_labels()`, `nx.laplacian_matrix()`, `nx.to_numpy_array()`
+
+**NLTK:**
+`nltk.download()`, `nltk.corpus.words.words()`, `nltk.corpus.wordnet.synsets()`
+
+**PEFT (Hugging Face):**
+`peft.LoraConfig`, `peft.get_peft_model()`, `model.print_trainable_parameters()`
+
+**nnsight:**
+`LanguageModel(model_name, device_map=...)`, `model.trace(inputs)`, `layer.output.save()`
+
+**FAISS:**
+`faiss.IndexFlatIP`
