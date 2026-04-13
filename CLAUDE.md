@@ -408,19 +408,22 @@ Per the README:
 Functions the user has already implemented in Question notebooks. When creating new problems, do NOT hint these — force recall from memory.
 
 **Torch Tensor Creation & Manipulation:**
-`torch.arange`, `torch.ones`, `torch.zeros`, `torch.randn`, `torch.randn_like`, `torch.ones_like`, `torch.zeros_like`, `torch.full_like`, `torch.cat`, `torch.stack`, `torch.full`, `torch.linspace`, `torch.tensor`, `torch.where`, `torch.randint`, `torch.Generator`, `.view()`, `.transpose()`, `.permute()`, `.unsqueeze()`, `.chunk()`, `.clone()`, `.flatten()`, `.reshape()`, `.to()` (dtype)
+`torch.arange`, `torch.ones`, `torch.zeros`, `torch.randn`, `torch.randn_like`, `torch.ones_like`, `torch.zeros_like`, `torch.full_like`, `torch.cat`, `torch.stack`, `torch.full`, `torch.linspace`, `torch.tensor`, `torch.where`, `torch.randint`, `torch.Generator`, `.view()`, `.transpose()`, `.permute()`, `.unsqueeze()`, `.chunk()`, `.clone()`, `.flatten()`, `.reshape()`, `.to()` (dtype), `.squeeze()`, `.contiguous()`, `.detach()`, `.argmax()`, `.size()`, `.sum()`, `.scatter_()`, `.bool()`, `.float()`, `.item()`, `.expand()`, `.unbind()`
 
 **Torch Math Operations:**
-`torch.sqrt`, `torch.rsqrt`, `torch.exp`, `torch.log`, `torch.sin`, `torch.cos`, `torch.round`, `torch.clamp`, `torch.einsum`, `torch.topk`, `torch.sort`, `torch.cumsum`, `torch.argsort`, `torch.masked_fill`, `torch.triu`, `torch.repeat_interleave`, `torch.multinomial`, `torch.gather`, `torch.logsumexp`, `torch.cdist`, `torch.randperm`, `torch.diag`, `torch.mv`, `torch.trapezoid`, `torch.allclose`, `.pow()`, `.mean()`, `.abs()`, `.max()`, `.min()`, `.amax()`, `.exp()`, `.log()`, `@` (matmul)
+`torch.sqrt`, `torch.rsqrt`, `torch.exp`, `torch.log`, `torch.sin`, `torch.cos`, `torch.round`, `torch.clamp`, `torch.einsum`, `torch.topk`, `torch.sort`, `torch.cumsum`, `torch.argsort`, `torch.masked_fill`, `torch.triu`, `torch.repeat_interleave`, `torch.multinomial`, `torch.gather`, `torch.logsumexp`, `torch.cdist`, `torch.randperm`, `torch.diag`, `torch.mv`, `torch.trapezoid`, `torch.allclose`, `.pow()`, `.mean()`, `.abs()`, `.max()`, `.min()`, `.amax()`, `.exp()`, `.log()`, `@` (matmul), `torch.tanh`, `torch.sigmoid`, `torch.bmm`, `torch.outer`, `torch.max` (function form with dim arg)
 
 **torch.nn Modules:**
-`nn.Linear`, `nn.Parameter`, `nn.Embedding`, `nn.Conv2d`, `nn.Sequential`, `nn.ReLU`, `nn.GELU`, `nn.SiLU`, `nn.LayerNorm`, `nn.MultiheadAttention`, `nn.ModuleList`, `nn.ModuleDict`, `nn.CrossEntropyLoss`, `nn.init.kaiming_uniform_`, `self.register_buffer`
+`nn.Linear`, `nn.Parameter`, `nn.Embedding`, `nn.Conv2d`, `nn.Sequential`, `nn.ReLU`, `nn.GELU`, `nn.SiLU`, `nn.LayerNorm`, `nn.MultiheadAttention`, `nn.ModuleList`, `nn.ModuleDict`, `nn.CrossEntropyLoss`, `nn.init.kaiming_uniform_`, `self.register_buffer`, `nn.RNN`, `nn.LSTM`, `nn.MaxPool2d`, `nn.ConvTranspose2d`, `nn.Conv3d`, `nn.ConvTranspose3d`, `nn.LeakyReLU`, `nn.Sigmoid`, `nn.Tanh`, `nn.BCELoss`, `nn.MSELoss`, `nn.AdaptiveAvgPool2d`, `nn.Dropout`, `nn.init.kaiming_normal_`, `nn.init.xavier_normal_`, `nn.init.xavier_uniform_`, `nn.init.zeros_`, `nn.init.normal_`, `nn.init.constant_`
 
 **torch.nn.functional:**
-`F.softmax`, `F.log_softmax`, `F.relu`, `F.silu`, `F.linear`, `F.normalize`, `F.kl_div`, `F.cross_entropy`, `F.mse_loss`, `F.binary_cross_entropy_with_logits`, `F.dropout`
+`F.softmax`, `F.log_softmax`, `F.relu`, `F.silu`, `F.linear`, `F.normalize`, `F.kl_div`, `F.cross_entropy`, `F.mse_loss`, `F.binary_cross_entropy_with_logits`, `F.dropout`, `F.scaled_dot_product_attention`, `F.unfold`, `F.pad`
 
 **Autograd / Training:**
-`torch.no_grad()`, `optimizer.zero_grad()`, `loss.backward()`, `optimizer.step()`, `model.zero_grad()`
+`torch.no_grad()`, `optimizer.zero_grad()`, `loss.backward()`, `optimizer.step()`, `model.zero_grad()`, `torch.optim.Adam`, `torch.optim.SGD`, `torch.save()`, `torch.load()`, `model.state_dict()`, `model.load_state_dict()`, `model.apply()`, `model.parameters()`, `model.named_children()`, `.requires_grad_(False)`
+
+**Custom Autograd (torch.autograd.Function):**
+`torch.autograd.Function`, `ctx.save_for_backward()`, `ctx.saved_tensors`, `Function.apply()`
 
 **Torch Distributions:**
 `torch.distributions.Normal`, `torch.distributions.kl_divergence`
@@ -437,6 +440,21 @@ Functions the user has already implemented in Question notebooks. When creating 
 **Hooks:**
 `module.register_forward_hook`, `module.register_full_backward_hook`
 
+**Mixed Precision (torch.cuda.amp):**
+`torch.cuda.amp.GradScaler()`, `torch.cuda.amp.autocast()`, `scaler.scale()`, `scaler.step()`, `scaler.update()`
+
+**Quantization:**
+`torch.quantization.quantize_dynamic`, `isinstance(module, nn.Linear)`, `setattr(model, name, module)`
+
+**torch.utils.data:**
+`torch.utils.data.Dataset`, `torch.utils.data.DataLoader`, `torch.utils.data.TensorDataset`, `__len__()`, `__getitem__()`
+
+**torch.utils.tensorboard:**
+`SummaryWriter`, `writer.add_scalar()`, `writer.close()`
+
+**torchvision:**
+`transforms.Compose`, `transforms.ToTensor`, `transforms.Normalize`, `transforms.RandomHorizontalFlip`, `transforms.RandomCrop`, `transforms.Resize`, `transforms.ToPILImage`, `torchvision.datasets.CIFAR10`, `torchvision.datasets.MNIST`, `torchvision.models.resnet18`, `torchvision.utils.make_grid`
+
 **einops:**
 `einops.rearrange`, `einops.repeat`, `einops.einsum`
 
@@ -444,13 +462,19 @@ Functions the user has already implemented in Question notebooks. When creating 
 `AutoTokenizer.from_pretrained`, `AutoModelForSequenceClassification.from_pretrained`, `AutoModelForCausalLM.from_pretrained`, `pipeline()`, `TrainingArguments`, `Trainer`, `datasets.load_dataset`, `SentenceTransformer`
 
 **Python Standard Library:**
-`collections.Counter`, `collections.defaultdict`, `dataclasses.dataclass`, `functools.cache`, `copy.deepcopy`, `re`, `enum.Enum`
+`collections.Counter`, `collections.defaultdict`, `dataclasses.dataclass`, `functools.cache`, `copy.deepcopy`, `re`, `enum.Enum`, `math.log`, `math.sqrt`, `typing.Optional`, `typing.Tuple`, `typing.List`, `typing.Callable`, `time.time()`
+
+**Python Builtins:**
+`isinstance()`, `setattr()`, `max(iterable, key=...)`, `min(iterable, key=...)`
 
 **FAISS:**
 `faiss.IndexFlatIP`
 
 **NumPy Interop:**
-`np.ascontiguousarray`
+`np.ascontiguousarray`, `np.transpose`
+
+**Pandas:**
+`pd.read_csv`, `pd.DataFrame`
 
 **Scientific Python:**
 `sklearn.decomposition.PCA`, `sklearn.metrics.roc_auc_score`, `scipy.stats.f_oneway`, `scipy.cluster.hierarchy.linkage`, `scipy.cluster.hierarchy.fcluster`
