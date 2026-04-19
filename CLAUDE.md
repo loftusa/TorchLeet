@@ -414,7 +414,7 @@ Functions the user has already implemented in Question notebooks. When creating 
 `torch.sqrt`, `torch.rsqrt`, `torch.exp`, `torch.log`, `torch.sin`, `torch.cos`, `torch.round`, `torch.clamp`, `torch.einsum`, `torch.topk`, `torch.sort`, `torch.cumsum`, `torch.argsort`, `torch.masked_fill`, `torch.triu`, `torch.repeat_interleave`, `torch.multinomial`, `torch.gather`, `torch.logsumexp`, `torch.cdist`, `torch.randperm`, `torch.diag`, `torch.mv`, `torch.trapezoid`, `torch.allclose`, `.pow()`, `.mean()`, `.abs()`, `.max()`, `.min()`, `.amax()`, `.exp()`, `.log()`, `@` (matmul), `torch.tanh`, `torch.sigmoid`, `torch.bmm`, `torch.outer`, `torch.max` (function form with dim arg), `torch.eye`, `torch.argmin`, `.norm()`, `.median()`, `.trace()`, `.unique()`, `.argsort()` (tensor method)
 
 **torch.nn Modules:**
-`nn.Linear`, `nn.Parameter`, `nn.Embedding`, `nn.Conv2d`, `nn.Sequential`, `nn.ReLU`, `nn.GELU`, `nn.SiLU`, `nn.LayerNorm`, `nn.MultiheadAttention`, `nn.ModuleList`, `nn.ModuleDict`, `nn.CrossEntropyLoss`, `nn.init.kaiming_uniform_`, `self.register_buffer`, `nn.RNN`, `nn.LSTM`, `nn.MaxPool2d`, `nn.ConvTranspose2d`, `nn.Conv3d`, `nn.ConvTranspose3d`, `nn.LeakyReLU`, `nn.Sigmoid`, `nn.Tanh`, `nn.BCELoss`, `nn.MSELoss`, `nn.AdaptiveAvgPool2d`, `nn.Dropout`, `nn.init.kaiming_normal_`, `nn.init.xavier_normal_`, `nn.init.xavier_uniform_`, `nn.init.zeros_`, `nn.init.normal_`, `nn.init.constant_`
+`nn.Linear`, `nn.Parameter`, `nn.Embedding`, `nn.Conv2d`, `nn.Sequential`, `nn.ReLU`, `nn.GELU`, `nn.SiLU`, `nn.LayerNorm`, `nn.MultiheadAttention`, `nn.ModuleList`, `nn.ModuleDict`, `nn.CrossEntropyLoss`, `nn.init.kaiming_uniform_`, `self.register_buffer`, `nn.RNN`, `nn.LSTM`, `nn.MaxPool2d`, `nn.ConvTranspose2d`, `nn.Conv3d`, `nn.ConvTranspose3d`, `nn.LeakyReLU`, `nn.Sigmoid`, `nn.Tanh`, `nn.BCELoss`, `nn.MSELoss`, `nn.AdaptiveAvgPool2d`, `nn.Dropout`, `nn.init.kaiming_normal_`, `nn.init.xavier_normal_`, `nn.init.xavier_uniform_`, `nn.init.zeros_`, `nn.init.normal_`, `nn.init.constant_`, `nn.init.ones_`
 
 **torch.nn.functional:**
 `F.softmax`, `F.log_softmax`, `F.relu`, `F.silu`, `F.linear`, `F.normalize`, `F.kl_div`, `F.cross_entropy`, `F.mse_loss`, `F.binary_cross_entropy_with_logits`, `F.dropout`, `F.scaled_dot_product_attention`, `F.unfold`, `F.pad`
@@ -459,13 +459,13 @@ Functions the user has already implemented in Question notebooks. When creating 
 `einops.rearrange`, `einops.repeat`, `einops.einsum`
 
 **HuggingFace:**
-`AutoTokenizer.from_pretrained`, `AutoModelForSequenceClassification.from_pretrained`, `AutoModelForCausalLM.from_pretrained`, `pipeline()`, `TrainingArguments`, `Trainer`, `datasets.load_dataset`, `SentenceTransformer`, `datasets.Dataset.from_dict()`, `dataset.map(batched=True)`, `CLIPModel.from_pretrained`, `CLIPProcessor.from_pretrained`
+`AutoTokenizer.from_pretrained`, `AutoModelForSequenceClassification.from_pretrained`, `AutoModelForCausalLM.from_pretrained`, `pipeline()`, `TrainingArguments`, `Trainer`, `datasets.load_dataset`, `SentenceTransformer`, `SentenceTransformer.encode()`, `datasets.Dataset.from_dict()`, `dataset.map(batched=True)`, `CLIPModel.from_pretrained`, `CLIPProcessor.from_pretrained`
 
 **Python Standard Library:**
 `collections.Counter`, `collections.defaultdict`, `dataclasses.dataclass`, `dataclasses.field`, `functools.cache`, `copy.deepcopy`, `re`, `re.sub`, `re.findall`, `re.search`, `re.split`, `enum.Enum`, `enum.auto`, `math.log`, `math.sqrt`, `math.ceil`, `typing.Optional`, `typing.Tuple`, `typing.List`, `typing.Callable`, `typing.Dict`, `time.time()`, `json.load()`, `pathlib.Path`, `urllib.parse.urlparse()`, `datetime.strptime()`, `datetime.timedelta`, `random.seed()`, `random.shuffle()`, `random.randrange()`, `statistics.mode()`, `warnings.filterwarnings()`, `io.BytesIO`, `os.path.exists()`, `os.path.getsize()`
 
 **Python Builtins:**
-`isinstance()`, `setattr()`, `max(iterable, key=...)`, `min(iterable, key=...)`, `sorted(iterable, key=..., reverse=True)`
+`isinstance()`, `setattr()`, `max(iterable, key=...)`, `min(iterable, key=...)`, `sorted(iterable, key=..., reverse=True)`, `property` (decorator), `str.split()`, `str.replace()`, `str.join()`, `str.lower()`, `str.strip()`, `str.isalpha()`, `str.islower()`
 
 **NumPy:**
 `np.ascontiguousarray`, `np.transpose`, `np.stack`, `np.argsort`, `np.argmax`, `np.argpartition`, `np.partition`, `np.zeros`, `np.array`, `np.mean`, `np.percentile`, `np.exp`, `np.average`, `np.log2`, `np.linspace`, `np.concatenate`, `np.clip`, `np.random.seed`, `np.random.choice`, `np.random.randint`, `np.linalg.eigh`, `np.trace`
