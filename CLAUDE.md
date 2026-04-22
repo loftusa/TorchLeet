@@ -411,7 +411,7 @@ Functions the user has already implemented in Question notebooks. When creating 
 `torch.arange`, `torch.ones`, `torch.zeros`, `torch.randn`, `torch.randn_like`, `torch.ones_like`, `torch.zeros_like`, `torch.full_like`, `torch.cat`, `torch.stack`, `torch.full`, `torch.linspace`, `torch.tensor`, `torch.where`, `torch.randint`, `torch.Generator`, `.view()`, `.transpose()`, `.permute()`, `.unsqueeze()`, `.chunk()`, `.clone()`, `.flatten()`, `.reshape()`, `.to()` (dtype), `.squeeze()`, `.contiguous()`, `.detach()`, `.argmax()`, `.size()`, `.sum()`, `.scatter_()`, `.bool()`, `.float()`, `.int()`, `.item()`, `.expand()`, `.unbind()`, `.copy_()`, `.numel()`, `.element_size()`
 
 **Torch Math Operations:**
-`torch.sqrt`, `torch.rsqrt`, `torch.exp`, `torch.log`, `torch.sin`, `torch.cos`, `torch.round`, `torch.clamp`, `torch.einsum`, `torch.topk`, `torch.sort`, `torch.cumsum`, `torch.argsort`, `torch.masked_fill`, `torch.triu`, `torch.repeat_interleave`, `torch.multinomial`, `torch.gather`, `torch.logsumexp`, `torch.cdist`, `torch.randperm`, `torch.diag`, `torch.mv`, `torch.trapezoid`, `torch.allclose`, `.pow()`, `.mean()`, `.abs()`, `.max()`, `.min()`, `.amax()`, `.exp()`, `.log()`, `@` (matmul), `torch.tanh`, `torch.sigmoid`, `torch.bmm`, `torch.outer`, `torch.max` (function form with dim arg), `torch.eye`, `torch.argmin`, `.norm()`, `.median()`, `.trace()`, `.unique()`, `.argsort()` (tensor method)
+`torch.sqrt`, `torch.rsqrt`, `torch.exp`, `torch.log`, `torch.sin`, `torch.cos`, `torch.round`, `torch.clamp`, `torch.einsum`, `torch.topk`, `torch.sort`, `torch.cumsum`, `torch.argsort`, `torch.masked_fill`, `.masked_fill_(mask, value)` (in-place), `torch.triu`, `torch.repeat_interleave`, `torch.multinomial`, `torch.gather`, `torch.logsumexp`, `torch.cdist`, `torch.randperm`, `torch.diag`, `torch.mv`, `torch.trapezoid`, `torch.allclose`, `.pow()`, `.mean()`, `.abs()`, `.max()`, `.min()`, `.amax()`, `.exp()`, `.log()`, `@` (matmul), `torch.tanh`, `torch.sigmoid`, `torch.bmm`, `torch.outer`, `torch.max` (function form with dim arg), `torch.eye`, `torch.argmin`, `.norm()`, `.median()`, `.trace()`, `.unique()`, `.argsort()` (tensor method)
 
 **torch.nn Modules:**
 `nn.Linear`, `nn.Parameter`, `nn.Embedding`, `nn.Conv2d`, `nn.Sequential`, `nn.ReLU`, `nn.GELU`, `nn.SiLU`, `nn.LayerNorm`, `nn.MultiheadAttention`, `nn.ModuleList`, `nn.ModuleDict`, `nn.CrossEntropyLoss`, `nn.init.kaiming_uniform_`, `self.register_buffer`, `nn.RNN`, `nn.LSTM`, `nn.MaxPool2d`, `nn.ConvTranspose2d`, `nn.Conv3d`, `nn.ConvTranspose3d`, `nn.LeakyReLU`, `nn.Sigmoid`, `nn.Tanh`, `nn.BCELoss`, `nn.MSELoss`, `nn.AdaptiveAvgPool2d`, `nn.Dropout`, `nn.init.kaiming_normal_`, `nn.init.xavier_normal_`, `nn.init.xavier_uniform_`, `nn.init.zeros_`, `nn.init.normal_`, `nn.init.constant_`, `nn.init.ones_`
@@ -446,6 +446,9 @@ Functions the user has already implemented in Question notebooks. When creating 
 **Quantization:**
 `torch.quantization.quantize_dynamic`, `isinstance(module, nn.Linear)`, `setattr(model, name, module)`
 
+**Torch JIT:**
+`@torch.jit.script`
+
 **torch.utils.data:**
 `torch.utils.data.Dataset`, `torch.utils.data.DataLoader`, `torch.utils.data.TensorDataset`, `__len__()`, `__getitem__()`
 
@@ -459,13 +462,13 @@ Functions the user has already implemented in Question notebooks. When creating 
 `einops.rearrange`, `einops.repeat`, `einops.einsum`
 
 **HuggingFace:**
-`AutoTokenizer.from_pretrained`, `AutoModelForSequenceClassification.from_pretrained`, `AutoModelForCausalLM.from_pretrained`, `pipeline()`, `TrainingArguments`, `Trainer`, `datasets.load_dataset`, `SentenceTransformer`, `SentenceTransformer.encode()`, `datasets.Dataset.from_dict()`, `dataset.map(batched=True)`, `CLIPModel.from_pretrained`, `CLIPProcessor.from_pretrained`
+`AutoTokenizer.from_pretrained`, `AutoModelForSequenceClassification.from_pretrained`, `AutoModelForCausalLM.from_pretrained`, `pipeline()`, `TrainingArguments`, `Trainer`, `datasets.load_dataset`, `SentenceTransformer`, `SentenceTransformer.encode(texts, convert_to_tensor=True)`, `datasets.Dataset.from_dict()`, `dataset.map(batched=True)`, `CLIPModel.from_pretrained`, `CLIPProcessor.from_pretrained`, `tokenizer(texts, return_tensors="pt", padding=True, truncation=True, max_length=n)` (callable form), `tokenizer.pad_token`
 
 **Python Standard Library:**
 `collections.Counter`, `collections.defaultdict`, `dataclasses.dataclass`, `dataclasses.field`, `functools.cache`, `copy.deepcopy`, `re`, `re.sub`, `re.findall`, `re.search`, `re.split`, `enum.Enum`, `enum.auto`, `math.log`, `math.sqrt`, `math.ceil`, `typing.Optional`, `typing.Tuple`, `typing.List`, `typing.Callable`, `typing.Dict`, `time.time()`, `json.load()`, `pathlib.Path`, `urllib.parse.urlparse()`, `datetime.strptime()`, `datetime.timedelta`, `random.seed()`, `random.shuffle()`, `random.randrange()`, `statistics.mode()`, `warnings.filterwarnings()`, `io.BytesIO`, `os.path.exists()`, `os.path.getsize()`
 
 **Python Builtins:**
-`isinstance()`, `setattr()`, `max(iterable, key=...)`, `min(iterable, key=...)`, `sorted(iterable, key=..., reverse=True)`, `property` (decorator), `str.split()`, `str.replace()`, `str.join()`, `str.lower()`, `str.strip()`, `str.isalpha()`, `str.islower()`
+`isinstance()`, `setattr()`, `max(iterable, key=...)`, `min(iterable, key=...)`, `sorted(iterable, key=..., reverse=True)`, `property` (decorator), `str.replace(old, new)`, `str.split()`, `str.join(iterable)` (e.g. `' '.join(tokens)`), `str.lower()`, `str.strip()`, `str.isalpha()`, `str.islower()`, `tuple(iterable)`
 
 **NumPy:**
 `np.ascontiguousarray`, `np.transpose`, `np.stack`, `np.argsort`, `np.argmax`, `np.argpartition`, `np.partition`, `np.zeros`, `np.array`, `np.mean`, `np.percentile`, `np.exp`, `np.average`, `np.log2`, `np.linspace`, `np.concatenate`, `np.clip`, `np.random.seed`, `np.random.choice`, `np.random.randint`, `np.linalg.eigh`, `np.trace`
