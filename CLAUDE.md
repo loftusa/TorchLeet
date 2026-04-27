@@ -408,16 +408,19 @@ Per the README:
 Functions the user has already implemented in Question notebooks. When creating new problems, do NOT hint these — force recall from memory.
 
 **Torch Tensor Creation & Manipulation:**
-`torch.arange`, `torch.ones`, `torch.zeros`, `torch.randn`, `torch.randn_like`, `torch.ones_like`, `torch.zeros_like`, `torch.full_like`, `torch.cat`, `torch.stack`, `torch.full`, `torch.linspace`, `torch.tensor`, `torch.where`, `torch.randint`, `torch.Generator`, `.view()`, `.transpose()`, `.permute()`, `.unsqueeze()`, `.chunk()`, `.clone()`, `.flatten()`, `.reshape()`, `.to()` (dtype), `.squeeze()`, `.contiguous()`, `.detach()`, `.argmax()`, `.size()`, `.sum()`, `.scatter_()`, `.bool()`, `.float()`, `.int()`, `.item()`, `.expand()`, `.unbind()`, `.copy_()`, `.numel()`, `.element_size()`
+`torch.arange`, `torch.ones`, `torch.zeros`, `torch.randn`, `torch.randn_like`, `torch.ones_like`, `torch.zeros_like`, `torch.full_like`, `torch.cat`, `torch.stack`, `torch.full`, `torch.linspace`, `torch.tensor`, `torch.where`, `torch.randint`, `torch.Generator`, `torch.rand`, `torch.manual_seed`, `torch.isfinite`, `.view()`, `.transpose()`, `.permute()`, `.unsqueeze()`, `.chunk()`, `.clone()`, `.flatten()`, `.reshape()`, `.to()` (dtype), `.squeeze()`, `.contiguous()`, `.detach()`, `.argmax()`, `.size()`, `.sum()`, `.scatter_()`, `.bool()`, `.float()`, `.int()`, `.item()`, `.expand()`, `.unbind()`, `.copy_()`, `.numel()`, `.element_size()`, `.numpy()`
+
+**Device Operations:**
+`torch.cuda.is_available()`, `torch.device()`, `.cuda()`, `.cpu()`
 
 **Torch Math Operations:**
-`torch.sqrt`, `torch.rsqrt`, `torch.exp`, `torch.log`, `torch.sin`, `torch.cos`, `torch.round`, `torch.clamp`, `torch.einsum`, `torch.topk`, `torch.sort`, `torch.cumsum`, `torch.argsort`, `torch.masked_fill`, `.masked_fill_(mask, value)` (in-place), `torch.triu`, `torch.repeat_interleave`, `torch.multinomial`, `torch.gather`, `torch.logsumexp`, `torch.cdist`, `torch.randperm`, `torch.diag`, `torch.mv`, `torch.trapezoid`, `torch.allclose`, `.pow()`, `.mean()`, `.abs()`, `.max()`, `.min()`, `.amax()`, `.exp()`, `.log()`, `@` (matmul), `torch.tanh`, `torch.sigmoid`, `torch.bmm`, `torch.outer`, `torch.max` (function form with dim arg), `torch.eye`, `torch.argmin`, `.norm()`, `.median()`, `.trace()`, `.unique()`, `.argsort()` (tensor method)
+`torch.sqrt`, `torch.rsqrt`, `torch.exp`, `torch.log`, `torch.sin`, `torch.cos`, `torch.round`, `torch.clamp`, `torch.einsum`, `torch.topk`, `torch.sort`, `torch.cumsum`, `torch.argsort`, `torch.masked_fill`, `.masked_fill_(mask, value)` (in-place), `torch.triu`, `torch.tril`, `torch.repeat_interleave`, `torch.multinomial`, `torch.gather`, `torch.logsumexp`, `torch.cdist`, `torch.randperm`, `torch.diag`, `torch.mv`, `torch.trapezoid`, `torch.allclose`, `torch.chunk` (function form), `.pow()`, `.mean()`, `.abs()`, `.max()`, `.min()`, `.amax()`, `.exp()`, `.log()`, `@` (matmul), `torch.tanh`, `torch.sigmoid`, `torch.bmm`, `torch.outer`, `torch.max` (function form with dim arg), `torch.eye`, `torch.argmin`, `.norm()`, `.median()`, `.trace()`, `.unique()`, `.argsort()` (tensor method)
 
 **torch.nn Modules:**
-`nn.Linear`, `nn.Parameter`, `nn.Embedding`, `nn.Conv2d`, `nn.Sequential`, `nn.ReLU`, `nn.GELU`, `nn.SiLU`, `nn.LayerNorm`, `nn.MultiheadAttention`, `nn.ModuleList`, `nn.ModuleDict`, `nn.CrossEntropyLoss`, `nn.init.kaiming_uniform_`, `self.register_buffer`, `nn.RNN`, `nn.LSTM`, `nn.MaxPool2d`, `nn.ConvTranspose2d`, `nn.Conv3d`, `nn.ConvTranspose3d`, `nn.LeakyReLU`, `nn.Sigmoid`, `nn.Tanh`, `nn.BCELoss`, `nn.MSELoss`, `nn.AdaptiveAvgPool2d`, `nn.Dropout`, `nn.init.kaiming_normal_`, `nn.init.xavier_normal_`, `nn.init.xavier_uniform_`, `nn.init.zeros_`, `nn.init.normal_`, `nn.init.constant_`, `nn.init.ones_`
+`nn.Linear`, `nn.Parameter`, `nn.Embedding`, `nn.Conv2d`, `nn.Sequential`, `nn.ReLU`, `nn.GELU`, `nn.SiLU`, `nn.LayerNorm`, `nn.MultiheadAttention`, `nn.ModuleList`, `nn.ModuleDict`, `nn.CrossEntropyLoss`, `nn.init.kaiming_uniform_`, `self.register_buffer`, `nn.RNN`, `nn.LSTM`, `nn.MaxPool2d`, `nn.ConvTranspose2d`, `nn.Conv3d`, `nn.ConvTranspose3d`, `nn.LeakyReLU`, `nn.Sigmoid`, `nn.Tanh`, `nn.BCELoss`, `nn.MSELoss`, `nn.AdaptiveAvgPool2d`, `nn.Dropout`, `nn.init.kaiming_normal_`, `nn.init.xavier_normal_`, `nn.init.xavier_uniform_`, `nn.init.zeros_`, `nn.init.normal_`, `nn.init.constant_`, `nn.init.ones_`, `model.children()`
 
 **torch.nn.functional:**
-`F.softmax`, `F.log_softmax`, `F.relu`, `F.silu`, `F.linear`, `F.normalize`, `F.kl_div`, `F.cross_entropy`, `F.mse_loss`, `F.binary_cross_entropy_with_logits`, `F.dropout`, `F.scaled_dot_product_attention`, `F.unfold`, `F.pad`
+`F.softmax`, `F.log_softmax`, `F.relu`, `F.gelu`, `F.silu`, `F.linear`, `F.normalize`, `F.kl_div`, `F.cross_entropy`, `F.mse_loss`, `F.binary_cross_entropy_with_logits`, `F.dropout`, `F.scaled_dot_product_attention`, `F.unfold`, `F.pad`
 
 **Autograd / Training:**
 `torch.no_grad()`, `optimizer.zero_grad()`, `loss.backward()`, `optimizer.step()`, `model.zero_grad()`, `torch.optim.Adam`, `torch.optim.AdamW`, `torch.optim.SGD`, `torch.save()`, `torch.load()`, `model.state_dict()`, `model.load_state_dict()`, `model.apply()`, `model.parameters()`, `model.named_parameters()`, `model.named_buffers()`, `model.named_children()`, `.requires_grad_(False)`, `model.train()`, `model.eval()`, `torch.optim.lr_scheduler.CosineAnnealingLR`, `scheduler.step()`
@@ -444,7 +447,7 @@ Functions the user has already implemented in Question notebooks. When creating 
 `torch.cuda.amp.GradScaler()`, `torch.cuda.amp.autocast()`, `scaler.scale()`, `scaler.step()`, `scaler.update()`
 
 **Quantization:**
-`torch.quantization.quantize_dynamic`, `isinstance(module, nn.Linear)`, `setattr(model, name, module)`
+`torch.quantization.quantize_dynamic`, `isinstance(module, nn.Linear)`, `setattr(model, name, module)`, `torch.qint8`, `torch.int8`, `torch.uint8`
 
 **Torch JIT:**
 `@torch.jit.script`
@@ -462,25 +465,25 @@ Functions the user has already implemented in Question notebooks. When creating 
 `einops.rearrange`, `einops.repeat`, `einops.einsum`
 
 **HuggingFace:**
-`AutoTokenizer.from_pretrained`, `AutoModelForSequenceClassification.from_pretrained`, `AutoModelForCausalLM.from_pretrained`, `pipeline()`, `TrainingArguments`, `Trainer`, `datasets.load_dataset`, `SentenceTransformer`, `SentenceTransformer.encode(texts, convert_to_tensor=True)`, `datasets.Dataset.from_dict()`, `dataset.map(batched=True)`, `CLIPModel.from_pretrained`, `CLIPProcessor.from_pretrained`, `tokenizer(texts, return_tensors="pt", padding=True, truncation=True, max_length=n)` (callable form), `tokenizer.pad_token`
+`AutoTokenizer.from_pretrained`, `AutoModelForSequenceClassification.from_pretrained`, `AutoModelForCausalLM.from_pretrained`, `pipeline()`, `TrainingArguments`, `Trainer`, `datasets.load_dataset`, `datasets.load_dataset(..., streaming=True)`, `SentenceTransformer`, `SentenceTransformer.encode(texts, convert_to_tensor=True)`, `datasets.Dataset.from_dict()`, `dataset.map(batched=True)`, `CLIPModel.from_pretrained`, `CLIPProcessor.from_pretrained`, `tokenizer(texts, return_tensors="pt", padding=True, truncation=True, max_length=n)` (callable form), `tokenizer.pad_token`, `tokenizer.decode()`, `model.config` (e.g. `model.config.num_hidden_layers`, `model.config.hidden_size`)
 
 **Python Standard Library:**
-`collections.Counter`, `collections.defaultdict`, `dataclasses.dataclass`, `dataclasses.field`, `functools.cache`, `copy.deepcopy`, `re`, `re.sub`, `re.findall`, `re.search`, `re.split`, `enum.Enum`, `enum.auto`, `math.log`, `math.sqrt`, `math.ceil`, `typing.Optional`, `typing.Tuple`, `typing.List`, `typing.Callable`, `typing.Dict`, `time.time()`, `json.load()`, `pathlib.Path`, `urllib.parse.urlparse()`, `datetime.strptime()`, `datetime.timedelta`, `random.seed()`, `random.shuffle()`, `random.randrange()`, `statistics.mode()`, `warnings.filterwarnings()`, `io.BytesIO`, `os.path.exists()`, `os.path.getsize()`
+`collections.Counter`, `collections.defaultdict`, `dataclasses.dataclass`, `dataclasses.field`, `functools.cache`, `copy.deepcopy`, `re`, `re.sub`, `re.findall`, `re.search`, `re.split`, `enum.Enum`, `enum.auto`, `math.log`, `math.sqrt`, `math.ceil`, `math.inf`, `typing.Optional`, `typing.Tuple`, `typing.List`, `typing.Callable`, `typing.Dict`, `typing.Union`, `time.time()`, `json.load()`, `pathlib.Path`, `pathlib.Path.open()`, `urllib.parse.urlparse()`, `datetime.strptime()`, `datetime.timedelta`, `random.seed()`, `random.shuffle()`, `random.randrange()`, `statistics.mode()`, `warnings.filterwarnings()`, `io.BytesIO`, `os.path.exists()`, `os.path.getsize()`
 
 **Python Builtins:**
-`isinstance()`, `setattr()`, `max(iterable, key=...)`, `min(iterable, key=...)`, `sorted(iterable, key=..., reverse=True)`, `property` (decorator), `str.replace(old, new)`, `str.split()`, `str.join(iterable)` (e.g. `' '.join(tokens)`), `str.lower()`, `str.strip()`, `str.isalpha()`, `str.islower()`, `tuple(iterable)`
+`isinstance()`, `setattr()`, `max(iterable, key=...)`, `min(iterable, key=...)`, `sorted(iterable, key=..., reverse=True)`, `property` (decorator), `str.replace(old, new)`, `str.split()`, `str.join(iterable)` (e.g. `' '.join(tokens)`), `str.lower()`, `str.strip()`, `str.isalpha()`, `str.islower()`, `str.isupper()`, `str.isdigit()`, `str.startswith()`, `tuple(iterable)`, `set()`, `next()`, `enumerate()`, `zip()`
 
 **NumPy:**
-`np.ascontiguousarray`, `np.transpose`, `np.stack`, `np.argsort`, `np.argmax`, `np.argpartition`, `np.partition`, `np.zeros`, `np.array`, `np.mean`, `np.percentile`, `np.exp`, `np.average`, `np.log2`, `np.linspace`, `np.concatenate`, `np.clip`, `np.random.seed`, `np.random.choice`, `np.random.randint`, `np.linalg.eigh`, `np.trace`
+`np.ascontiguousarray`, `np.transpose`, `np.stack`, `np.argsort`, `np.argmax`, `np.argpartition`, `np.partition`, `np.zeros`, `np.array`, `np.mean`, `np.percentile`, `np.exp`, `np.log`, `np.log2`, `np.average`, `np.linspace`, `np.concatenate`, `np.clip`, `np.sort`, `np.meshgrid`, `np.random.seed`, `np.random.choice`, `np.random.randint`, `np.linalg.eigh`, `np.trace`
 
 **Pandas:**
-`pd.read_csv`, `pd.DataFrame`, `df.groupby().agg()`, `df.groupby().rolling()`, `.reset_index()`, `.dropna()`, `df["col"].map()`, `df.diff()`, `pd.qcut()`
+`pd.read_csv`, `pd.DataFrame`, `df.groupby().agg()`, `df.groupby().rolling()`, `.reset_index()`, `.dropna()`, `df["col"].map()`, `df["col"].apply()`, `df["col"].nunique()`, `df["col"].std()`, `df["col"].count()`, `df["col"].min()`, `df["col"].max()`, `df["col"].tolist()`, `df.to_csv()`, `df.diff()`, `pd.qcut()`
 
 **Visualization:**
-`plt.bar()`, `plt.subplots()`, `plt.figure()`, `plt.savefig()`, `plt.colorbar()`, `plt.tight_layout()`, `plt.rcParams.update()`, `ax.plot()`, `ax.fill()`, `ax.scatter()`, `ax.imshow()`, `ax.annotate()`, `ax.legend()`, `ax.set_title()`, `ax.set_xlabel()`, `ax.set_ylabel()`, `ax.set_xticks()`, `ax.set_xticklabels()`, `ax.spines[...].set_visible()`, `sns.heatmap()`, `sns.despine()`, polar axes: `ax.set_theta_offset()`, `ax.set_theta_direction()`, `ax.set_rlabel_position()`
+`plt.bar()`, `plt.subplots()`, `plt.figure()`, `plt.savefig()`, `plt.colorbar()`, `plt.tight_layout()`, `plt.rcParams.update()`, `ax.plot()`, `ax.fill()`, `ax.scatter()`, `ax.imshow()`, `ax.annotate()`, `ax.legend()`, `ax.set_title()`, `ax.set_xlabel()`, `ax.set_ylabel()`, `ax.set_xticks()`, `ax.set_xticklabels()`, `ax.spines[...].set_visible()`, `ax.axhline()`, `ax.axvline()`, `sns.heatmap()`, `sns.scatterplot()`, `sns.despine()`, polar axes: `ax.set_theta_offset()`, `ax.set_theta_direction()`, `ax.set_rlabel_position()`
 
 **Scientific Python:**
-`sklearn.decomposition.PCA`, `sklearn.metrics.roc_auc_score`, `sklearn.metrics.pairwise.cosine_similarity`, `sklearn.preprocessing.StandardScaler`, `scipy.stats.f_oneway`, `scipy.cluster.hierarchy.linkage`, `scipy.cluster.hierarchy.fcluster`, `requests.get()`
+`sklearn.decomposition.PCA`, `pca.fit()`, `pca.fit_transform()`, `pca.transform()`, `pca.explained_variance_ratio_`, `sklearn.metrics.roc_auc_score`, `sklearn.metrics.pairwise.cosine_similarity`, `sklearn.preprocessing.StandardScaler`, `scipy.stats.f_oneway`, `scipy.cluster.hierarchy.linkage`, `scipy.cluster.hierarchy.fcluster`, `requests.get()`
 
 **networkx:**
 `nx.Graph()`, `G.add_edge()`, `G.add_node()`, `nx.pagerank()`, `nx.betweenness_centrality()`, `nx.clustering()`, `nx.degree_centrality()`, `nx.community.greedy_modularity_communities()`, `nx.spring_layout()`, `nx.draw_networkx_nodes()`, `nx.draw_networkx_edges()`, `nx.draw_networkx_labels()`, `nx.laplacian_matrix()`, `nx.to_numpy_array()`
@@ -505,3 +508,6 @@ Functions the user has already implemented in Question notebooks. When creating 
 
 **PIL/Pillow:**
 `PIL.Image.open()`, `PIL.Image.fromarray()`
+
+**jaxtyping:**
+`Float[Tensor, "batch seq d_model"]` (runtime shape annotations), `jaxtyping.Float`
