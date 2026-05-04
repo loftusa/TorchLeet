@@ -408,7 +408,7 @@ Per the README:
 Functions the user has already implemented in Question notebooks. When creating new problems, do NOT hint these — force recall from memory.
 
 **Torch Tensor Creation & Manipulation:**
-`torch.arange`, `torch.ones`, `torch.zeros`, `torch.randn`, `torch.randn_like`, `torch.ones_like`, `torch.zeros_like`, `torch.full_like`, `torch.cat`, `torch.stack`, `torch.full`, `torch.linspace`, `torch.tensor`, `torch.where`, `torch.randint`, `torch.Generator`, `torch.rand`, `torch.manual_seed`, `torch.isfinite`, `.view()`, `.transpose()`, `.permute()`, `.unsqueeze()`, `.chunk()`, `.clone()`, `.flatten()`, `.reshape()`, `.to()` (dtype), `.squeeze()`, `.contiguous()`, `.detach()`, `.argmax()`, `.size()`, `.sum()`, `.scatter_()`, `.bool()`, `.float()`, `.int()`, `.item()`, `.expand()`, `.unbind()`, `.copy_()`, `.numel()`, `.element_size()`, `.numpy()`
+`torch.arange`, `torch.ones`, `torch.zeros`, `torch.randn`, `torch.randn_like`, `torch.ones_like`, `torch.zeros_like`, `torch.full_like`, `torch.cat`, `torch.stack`, `torch.full`, `torch.linspace`, `torch.tensor`, `torch.where`, `torch.randint`, `torch.rand`, `torch.Generator`, `torch.manual_seed()`, `torch.isfinite`, `.view()`, `.transpose()`, `.permute()`, `.unsqueeze()`, `.chunk()`, `.split()`, `.clone()`, `.flatten()`, `.reshape()`, `.to()` (dtype), `.squeeze()`, `.contiguous()`, `.detach()`, `.argmax()`, `.size()`, `.sum()`, `.scatter_()`, `.bool()`, `.float()`, `.int()`, `.item()`, `.expand()`, `.unbind()`, `.copy_()`, `.numel()`, `.element_size()`, `.numpy()`
 
 **Device Operations:**
 `torch.cuda.is_available()`, `torch.device()`, `.cuda()`, `.cpu()`
@@ -432,7 +432,7 @@ Functions the user has already implemented in Question notebooks. When creating 
 `torch.distributions.Normal`, `torch.distributions.kl_divergence`
 
 **Linear Algebra:**
-`torch.linalg.eigvalsh`, `torch.linalg.eigh`, `torch.linalg.solve`, `torch.linalg.slogdet`
+`torch.linalg.eigvalsh`, `torch.linalg.eigh`, `torch.linalg.solve`, `torch.linalg.slogdet`, `torch.linalg.inv()`
 
 **Functional Transforms:**
 `torch.func.grad`, `torch.func.vmap`, `torch.func.functional_call`
@@ -468,25 +468,25 @@ Functions the user has already implemented in Question notebooks. When creating 
 `AutoTokenizer.from_pretrained`, `AutoModelForSequenceClassification.from_pretrained`, `AutoModelForCausalLM.from_pretrained`, `pipeline()`, `TrainingArguments`, `Trainer`, `datasets.load_dataset`, `datasets.load_dataset(..., streaming=True)`, `SentenceTransformer`, `SentenceTransformer.encode(texts, convert_to_tensor=True)`, `datasets.Dataset.from_dict()`, `dataset.map(batched=True)`, `CLIPModel.from_pretrained`, `CLIPProcessor.from_pretrained`, `tokenizer(texts, return_tensors="pt", padding=True, truncation=True, max_length=n)` (callable form), `tokenizer.pad_token`, `tokenizer.decode()`, `model.config` (e.g. `model.config.num_hidden_layers`, `model.config.hidden_size`)
 
 **Python Standard Library:**
-`collections.Counter`, `collections.defaultdict`, `dataclasses.dataclass`, `dataclasses.field`, `functools.cache`, `copy.deepcopy`, `re`, `re.sub`, `re.findall`, `re.search`, `re.split`, `enum.Enum`, `enum.auto`, `math.log`, `math.sqrt`, `math.ceil`, `math.inf`, `typing.Optional`, `typing.Tuple`, `typing.List`, `typing.Callable`, `typing.Dict`, `typing.Union`, `time.time()`, `json.load()`, `pathlib.Path`, `pathlib.Path.open()`, `urllib.parse.urlparse()`, `datetime.strptime()`, `datetime.timedelta`, `random.seed()`, `random.shuffle()`, `random.randrange()`, `statistics.mode()`, `warnings.filterwarnings()`, `io.BytesIO`, `os.path.exists()`, `os.path.getsize()`
+`collections.Counter`, `collections.defaultdict`, `dataclasses.dataclass`, `dataclasses.field`, `functools.cache`, `copy.deepcopy`, `re`, `re.sub`, `re.findall`, `re.search`, `re.split`, `enum.Enum`, `enum.auto`, `math.log`, `math.sqrt`, `math.ceil`, `math.inf`, `typing.Optional`, `typing.Tuple`, `typing.List`, `typing.Callable`, `typing.Dict`, `typing.Union`, `time.time()`, `json.load()`, `pathlib.Path`, `pathlib.Path.open()`, `urllib.parse.urlparse()`, `datetime.strptime()`, `datetime.timedelta`, `random.seed()`, `random.shuffle()`, `random.randrange()`, `random.choices()`, `random.randint()`, `statistics.mode()`, `warnings.filterwarnings()`, `io.BytesIO`, `os.path.exists()`, `os.path.getsize()`
 
 **Python Builtins:**
 `isinstance()`, `setattr()`, `max(iterable, key=...)`, `min(iterable, key=...)`, `sorted(iterable, key=..., reverse=True)`, `property` (decorator), `str.replace(old, new)`, `str.split()`, `str.join(iterable)` (e.g. `' '.join(tokens)`), `str.lower()`, `str.strip()`, `str.isalpha()`, `str.islower()`, `str.isupper()`, `str.isdigit()`, `str.startswith()`, `tuple(iterable)`, `set()`, `next()`, `enumerate()`, `zip()`
 
 **NumPy:**
-`np.ascontiguousarray`, `np.transpose`, `np.stack`, `np.argsort`, `np.argmax`, `np.argpartition`, `np.partition`, `np.zeros`, `np.array`, `np.mean`, `np.percentile`, `np.exp`, `np.log`, `np.log2`, `np.average`, `np.linspace`, `np.concatenate`, `np.clip`, `np.sort`, `np.meshgrid`, `np.random.seed`, `np.random.choice`, `np.random.randint`, `np.linalg.eigh`, `np.trace`
+`np.ascontiguousarray`, `np.transpose`, `np.stack`, `np.argsort`, `np.argmax`, `np.argpartition`, `np.partition`, `np.zeros`, `np.array`, `np.mean`, `np.percentile`, `np.exp`, `np.log`, `np.log2`, `np.average`, `np.linspace`, `np.concatenate`, `np.clip`, `np.sort`, `np.meshgrid`, `np.random.seed`, `np.random.choice`, `np.random.randint`, `np.linalg.eigh`, `np.linalg.norm()`, `np.trace`
 
 **Pandas:**
-`pd.read_csv`, `pd.DataFrame`, `df.groupby().agg()`, `df.groupby().rolling()`, `.reset_index()`, `.dropna()`, `df["col"].map()`, `df["col"].apply()`, `df["col"].nunique()`, `df["col"].std()`, `df["col"].count()`, `df["col"].min()`, `df["col"].max()`, `df["col"].tolist()`, `df.to_csv()`, `df.diff()`, `pd.qcut()`
+`pd.read_csv`, `pd.DataFrame`, `df.groupby().agg()`, `df.groupby().rolling()`, `df.groupby().apply()`, `.reset_index()`, `.dropna()`, `df["col"].map()`, `df["col"].apply()`, `df["col"].nunique()`, `df["col"].std()`, `df["col"].count()`, `df["col"].min()`, `df["col"].max()`, `df["col"].tolist()`, `df.to_csv()`, `df.diff()`, `pd.qcut()`, `pd.cut()`
 
 **Visualization:**
 `plt.bar()`, `plt.subplots()`, `plt.figure()`, `plt.savefig()`, `plt.colorbar()`, `plt.tight_layout()`, `plt.rcParams.update()`, `ax.plot()`, `ax.fill()`, `ax.scatter()`, `ax.imshow()`, `ax.annotate()`, `ax.legend()`, `ax.set_title()`, `ax.set_xlabel()`, `ax.set_ylabel()`, `ax.set_xticks()`, `ax.set_xticklabels()`, `ax.spines[...].set_visible()`, `ax.axhline()`, `ax.axvline()`, `sns.heatmap()`, `sns.scatterplot()`, `sns.despine()`, polar axes: `ax.set_theta_offset()`, `ax.set_theta_direction()`, `ax.set_rlabel_position()`
 
 **Scientific Python:**
-`sklearn.decomposition.PCA`, `pca.fit()`, `pca.fit_transform()`, `pca.transform()`, `pca.explained_variance_ratio_`, `sklearn.metrics.roc_auc_score`, `sklearn.metrics.pairwise.cosine_similarity`, `sklearn.preprocessing.StandardScaler`, `scipy.stats.f_oneway`, `scipy.cluster.hierarchy.linkage`, `scipy.cluster.hierarchy.fcluster`, `requests.get()`
+`sklearn.decomposition.PCA`, `pca.fit()`, `pca.fit_transform()`, `pca.transform()`, `pca.explained_variance_ratio_`, `sklearn.metrics.roc_auc_score`, `sklearn.metrics.cohen_kappa_score`, `sklearn.metrics.pairwise.cosine_similarity`, `sklearn.preprocessing.StandardScaler`, `scipy.stats.f_oneway`, `scipy.linalg.eigh()`, `scipy.cluster.hierarchy.linkage`, `scipy.cluster.hierarchy.fcluster`, `requests.get()`
 
 **networkx:**
-`nx.Graph()`, `G.add_edge()`, `G.add_node()`, `nx.pagerank()`, `nx.betweenness_centrality()`, `nx.clustering()`, `nx.degree_centrality()`, `nx.community.greedy_modularity_communities()`, `nx.spring_layout()`, `nx.draw_networkx_nodes()`, `nx.draw_networkx_edges()`, `nx.draw_networkx_labels()`, `nx.laplacian_matrix()`, `nx.to_numpy_array()`
+`nx.Graph()`, `G.add_edge()`, `G.add_node()`, `nx.from_pandas_edgelist()`, `nx.pagerank()`, `nx.betweenness_centrality()`, `nx.clustering()`, `nx.degree_centrality()`, `nx.community.greedy_modularity_communities()`, `nx.spring_layout()`, `nx.draw_networkx_nodes()`, `nx.draw_networkx_edges()`, `nx.draw_networkx_labels()`, `nx.laplacian_matrix()`, `nx.to_numpy_array()`
 
 **NLTK:**
 `nltk.download()`, `nltk.corpus.words.words()`, `nltk.corpus.wordnet.synsets()`
@@ -511,3 +511,6 @@ Functions the user has already implemented in Question notebooks. When creating 
 
 **jaxtyping:**
 `Float[Tensor, "batch seq d_model"]` (runtime shape annotations), `jaxtyping.Float`
+
+**Web/Data Collection:**
+`warcio.ArchiveIterator()`, `trafilatura.extract()`, `BeautifulSoup()` (beautifulsoup4)
