@@ -408,13 +408,13 @@ Per the README:
 Functions the user has already implemented in Question notebooks. When creating new problems, do NOT hint these — force recall from memory.
 
 **Torch Tensor Creation & Manipulation:**
-`torch.arange`, `torch.ones`, `torch.zeros`, `torch.randn`, `torch.randn_like`, `torch.ones_like`, `torch.zeros_like`, `torch.full_like`, `torch.cat`, `torch.stack`, `torch.full`, `torch.linspace`, `torch.tensor`, `torch.where`, `torch.randint`, `torch.rand`, `torch.Generator`, `torch.manual_seed()`, `torch.isfinite`, `.view()`, `.transpose()`, `.permute()`, `.unsqueeze()`, `.chunk()`, `.split()`, `.clone()`, `.flatten()`, `.reshape()`, `.to()` (dtype), `.squeeze()`, `.contiguous()`, `.detach()`, `.argmax()`, `.size()`, `.sum()`, `.scatter_()`, `.bool()`, `.float()`, `.int()`, `.item()`, `.expand()`, `.unbind()`, `.copy_()`, `.numel()`, `.element_size()`, `.numpy()`
+`torch.arange`, `torch.ones`, `torch.zeros`, `torch.randn`, `torch.randn_like`, `torch.ones_like`, `torch.zeros_like`, `torch.full_like`, `torch.cat`, `torch.stack`, `torch.full`, `torch.linspace`, `torch.tensor`, `torch.where`, `torch.randint`, `torch.rand`, `torch.empty`, `torch.Generator`, `torch.manual_seed()`, `torch.isfinite`, `.view()`, `.transpose()`, `.permute()`, `.unsqueeze()`, `.chunk()`, `.split()`, `.clone()`, `.flatten()`, `.reshape()`, `.to()` (dtype), `.squeeze()`, `.contiguous()`, `.detach()`, `.argmax()`, `.size()`, `.sum()`, `.scatter_()`, `.bool()`, `.float()`, `.int()`, `.item()`, `.expand()`, `.unbind()`, `.copy_()`, `.numel()`, `.element_size()`, `.numpy()`
 
 **Device Operations:**
 `torch.cuda.is_available()`, `torch.device()`, `.cuda()`, `.cpu()`
 
 **Torch Math Operations:**
-`torch.sqrt`, `torch.rsqrt`, `torch.exp`, `torch.log`, `torch.sin`, `torch.cos`, `torch.round`, `torch.clamp`, `torch.einsum`, `torch.topk`, `torch.sort`, `torch.cumsum`, `torch.argsort`, `torch.masked_fill`, `.masked_fill_(mask, value)` (in-place), `torch.triu`, `torch.tril`, `torch.repeat_interleave`, `torch.multinomial`, `torch.gather`, `torch.logsumexp`, `torch.cdist`, `torch.randperm`, `torch.diag`, `torch.mv`, `torch.trapezoid`, `torch.allclose`, `torch.chunk` (function form), `.pow()`, `.mean()`, `.abs()`, `.max()`, `.min()`, `.amax()`, `.exp()`, `.log()`, `@` (matmul), `torch.tanh`, `torch.sigmoid`, `torch.bmm`, `torch.outer`, `torch.max` (function form with dim arg), `torch.eye`, `torch.argmin`, `.norm()`, `.median()`, `.trace()`, `.unique()`, `.argsort()` (tensor method)
+`torch.sqrt`, `torch.rsqrt`, `torch.exp`, `torch.log`, `torch.sin`, `torch.cos`, `torch.round`, `torch.clamp`, `torch.abs`, `torch.relu`, `torch.einsum`, `torch.topk`, `torch.sort`, `torch.cumsum`, `torch.argsort`, `torch.masked_fill`, `.masked_fill_(mask, value)` (in-place), `torch.triu`, `torch.tril`, `torch.repeat_interleave`, `torch.multinomial`, `torch.gather`, `torch.logsumexp`, `torch.cdist`, `torch.randperm`, `torch.diag`, `torch.mv`, `torch.trapezoid`, `torch.allclose`, `torch.chunk` (function form), `.pow()`, `.mean()`, `.abs()`, `.max()`, `.min()`, `.amax()`, `.exp()`, `.log()`, `@` (matmul), `torch.tanh`, `torch.sigmoid`, `torch.bmm`, `torch.outer`, `torch.max` (function form with dim arg), `torch.eye`, `torch.argmin`, `.norm()`, `.median()`, `.trace()`, `.unique()`, `.argsort()` (tensor method)
 
 **torch.nn Modules:**
 `nn.Linear`, `nn.Parameter`, `nn.Embedding`, `nn.Conv2d`, `nn.Sequential`, `nn.ReLU`, `nn.GELU`, `nn.SiLU`, `nn.LayerNorm`, `nn.MultiheadAttention`, `nn.ModuleList`, `nn.ModuleDict`, `nn.CrossEntropyLoss`, `nn.init.kaiming_uniform_`, `self.register_buffer`, `nn.RNN`, `nn.LSTM`, `nn.MaxPool2d`, `nn.ConvTranspose2d`, `nn.Conv3d`, `nn.ConvTranspose3d`, `nn.LeakyReLU`, `nn.Sigmoid`, `nn.Tanh`, `nn.BCELoss`, `nn.MSELoss`, `nn.AdaptiveAvgPool2d`, `nn.Dropout`, `nn.init.kaiming_normal_`, `nn.init.xavier_normal_`, `nn.init.xavier_uniform_`, `nn.init.zeros_`, `nn.init.normal_`, `nn.init.constant_`, `nn.init.ones_`, `model.children()`
@@ -441,7 +441,7 @@ Functions the user has already implemented in Question notebooks. When creating 
 `torch.autograd.grad`
 
 **Hooks:**
-`module.register_forward_hook`, `module.register_full_backward_hook`
+`module.register_forward_hook`, `module.register_full_backward_hook`, `module.register_backward_hook`
 
 **Mixed Precision (torch.cuda.amp):**
 `torch.cuda.amp.GradScaler()`, `torch.cuda.amp.autocast()`, `scaler.scale()`, `scaler.step()`, `scaler.update()`
@@ -465,7 +465,7 @@ Functions the user has already implemented in Question notebooks. When creating 
 `einops.rearrange`, `einops.repeat`, `einops.einsum`
 
 **HuggingFace:**
-`AutoTokenizer.from_pretrained`, `AutoModelForSequenceClassification.from_pretrained`, `AutoModelForCausalLM.from_pretrained`, `pipeline()`, `TrainingArguments`, `Trainer`, `datasets.load_dataset`, `datasets.load_dataset(..., streaming=True)`, `SentenceTransformer`, `SentenceTransformer.encode(texts, convert_to_tensor=True)`, `datasets.Dataset.from_dict()`, `dataset.map(batched=True)`, `CLIPModel.from_pretrained`, `CLIPProcessor.from_pretrained`, `tokenizer(texts, return_tensors="pt", padding=True, truncation=True, max_length=n)` (callable form), `tokenizer.pad_token`, `tokenizer.decode()`, `model.config` (e.g. `model.config.num_hidden_layers`, `model.config.hidden_size`), `model(..., output_hidden_states=True)`, `outputs.hidden_states`
+`AutoTokenizer.from_pretrained`, `AutoModelForSequenceClassification.from_pretrained`, `AutoModelForCausalLM.from_pretrained`, `pipeline()`, `TrainingArguments`, `Trainer`, `trainer.train()`, `datasets.load_dataset`, `datasets.load_dataset(..., streaming=True)`, `SentenceTransformer`, `SentenceTransformer.encode(texts, convert_to_tensor=True)`, `datasets.Dataset.from_dict()`, `dataset.map(batched=True)`, `CLIPModel.from_pretrained`, `CLIPProcessor.from_pretrained`, `tokenizer(texts, return_tensors="pt", padding=True, truncation=True, max_length=n)` (callable form), `tokenizer.pad_token`, `tokenizer.decode()`, `model.config` (e.g. `model.config.num_hidden_layers`, `model.config.hidden_size`), `model(..., output_hidden_states=True)`, `outputs.hidden_states`
 
 **Python Standard Library:**
 `collections.Counter`, `collections.Counter.most_common()`, `collections.defaultdict`, `dataclasses.dataclass`, `dataclasses.field`, `functools.cache`, `copy.deepcopy`, `re`, `re.sub`, `re.findall`, `re.search`, `re.split`, `enum.Enum`, `enum.auto`, `math.log`, `math.sqrt`, `math.ceil`, `math.inf`, `math.exp`, `math.pi`, `typing.Optional`, `typing.Tuple`, `typing.List`, `typing.Callable`, `typing.Dict`, `typing.Union`, `time.time()`, `json.load()`, `pathlib.Path`, `pathlib.Path.open()`, `urllib.parse.urlparse()`, `datetime.strptime()`, `datetime.timedelta`, `random.seed()`, `random.shuffle()`, `random.randrange()`, `random.choices()`, `random.randint()`, `statistics.mode()`, `warnings.filterwarnings()`, `io.BytesIO`, `os.path.exists()`, `os.path.getsize()`
@@ -480,10 +480,10 @@ Functions the user has already implemented in Question notebooks. When creating 
 `pd.read_csv`, `pd.DataFrame`, `df.groupby().agg()`, `df.groupby().rolling()`, `df.groupby().apply()`, `.reset_index()`, `.dropna()`, `df["col"].map()`, `df["col"].apply()`, `df["col"].nunique()`, `df["col"].std()`, `df["col"].count()`, `df["col"].min()`, `df["col"].max()`, `df["col"].tolist()`, `df.to_csv()`, `df.diff()`, `pd.qcut()`, `pd.cut()`
 
 **Visualization:**
-`plt.bar()`, `plt.subplots()`, `plt.figure()`, `plt.savefig()`, `plt.colorbar()`, `plt.tight_layout()`, `plt.rcParams.update()`, `ax.plot()`, `ax.fill()`, `ax.scatter()`, `ax.imshow()`, `ax.annotate()`, `ax.legend()`, `ax.set_title()`, `ax.set_xlabel()`, `ax.set_ylabel()`, `ax.set_xticks()`, `ax.set_xticklabels()`, `ax.spines[...].set_visible()`, `ax.axhline()`, `ax.axvline()`, `sns.heatmap()`, `sns.scatterplot()`, `sns.despine()`, polar axes: `ax.set_theta_offset()`, `ax.set_theta_direction()`, `ax.set_rlabel_position()`
+`plt.bar()`, `plt.subplots()`, `plt.figure()`, `plt.savefig()`, `plt.colorbar()`, `plt.tight_layout()`, `plt.rcParams.update()`, `plt.show()`, `plt.title()`, `plt.legend()`, `plt.plot()`, `plt.imshow()`, `plt.axis()`, `fig.add_subplot()`, `ax.plot()`, `ax.fill()`, `ax.scatter()`, `ax.imshow()`, `ax.annotate()`, `ax.legend()`, `ax.set_title()`, `ax.set_xlabel()`, `ax.set_ylabel()`, `ax.set_xticks()`, `ax.set_xticklabels()`, `ax.spines[...].set_visible()`, `ax.axhline()`, `ax.axvline()`, `sns.heatmap()`, `sns.scatterplot()`, `sns.lineplot()`, `sns.despine()`, polar axes: `ax.set_theta_offset()`, `ax.set_theta_direction()`, `ax.set_rlabel_position()`
 
 **Scientific Python:**
-`sklearn.decomposition.PCA`, `pca.fit()`, `pca.fit_transform()`, `pca.transform()`, `pca.explained_variance_ratio_`, `sklearn.metrics.roc_auc_score`, `sklearn.metrics.cohen_kappa_score`, `sklearn.metrics.pairwise.cosine_similarity`, `sklearn.preprocessing.StandardScaler`, `scipy.stats.f_oneway`, `scipy.linalg.eigh()`, `scipy.cluster.hierarchy.linkage`, `scipy.cluster.hierarchy.fcluster`, `requests.get()`
+`sklearn.decomposition.PCA`, `pca.fit()`, `pca.fit_transform()`, `pca.transform()`, `pca.explained_variance_ratio_`, `sklearn.metrics.roc_auc_score`, `sklearn.metrics.cohen_kappa_score`, `sklearn.metrics.pairwise.cosine_similarity`, `sklearn.preprocessing.StandardScaler`, `scipy.stats.f_oneway`, `scipy.linalg.eigh()`, `scipy.cluster.hierarchy.linkage`, `scipy.cluster.hierarchy.fcluster`, `scipy.cluster.hierarchy.dendrogram`, `requests.get()`
 
 **networkx:**
 `nx.Graph()`, `G.add_edge()`, `G.add_node()`, `nx.from_pandas_edgelist()`, `nx.pagerank()`, `nx.betweenness_centrality()`, `nx.clustering()`, `nx.degree_centrality()`, `nx.community.greedy_modularity_communities()`, `nx.spring_layout()`, `nx.draw_networkx_nodes()`, `nx.draw_networkx_edges()`, `nx.draw_networkx_labels()`, `nx.laplacian_matrix()`, `nx.to_numpy_array()`
@@ -501,13 +501,13 @@ Functions the user has already implemented in Question notebooks. When creating 
 `faiss.IndexFlatIP`
 
 **tkinter:**
-`tk.Tk()`, `tk.Button`, `tk.Label`, `tk.Frame`, `root.mainloop()`, `widget.config()`, `widget.grid()`, `widget.pack()`
+`tk.Tk()`, `tk.Button`, `tk.Label`, `tk.Frame`, `root.mainloop()`, `root.title()`, `root.configure()`, `widget.config()`, `widget.grid()`, `widget.pack()`
 
 **tqdm:**
 `tqdm.auto.tqdm`
 
 **PIL/Pillow:**
-`PIL.Image.open()`, `PIL.Image.fromarray()`
+`PIL.Image.open()`, `PIL.Image.fromarray()`, `image.resize(size, resample=...)`
 
 **jaxtyping:**
 `Float[Tensor, "batch seq d_model"]` (runtime shape annotations), `jaxtyping.Float`
