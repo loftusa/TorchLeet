@@ -105,6 +105,20 @@ The solution notebook has the same structure but with:
    ```
    This schedules automatic review reminders at 3, 7, 21, and 60 days. The SessionStart hook in `.claude/settings.json` will surface due reviews when a session begins.
 
+## Reference Architecture
+
+When a problem needs an example model architecture (e.g., for reward model training, attention implementation, or full model problems), use the **current open-weight SOTA** as the reference. This keeps problems grounded in what frontier labs actually ship.
+
+**Current reference (last verified 2026-05-25):** Kimi K2 (Moonshot AI)
+- 1T total params, 32B active (MoE: 384 experts, 8 selected per token, 1 shared)
+- 61 layers, hidden dim 7168, 64 attention heads, MLA (Multi-head Latent Attention)
+- SwiGLU activation, 160K vocab, 128K context
+- Open-weight, Apache 2.0
+
+**How to use:** Don't build a full K2 in a 30m problem — scale down proportionally. Use realistic *ratios* and *design choices* (e.g., SwiGLU over ReLU, GQA/MLA over vanilla MHA, large vocab). When the problem mentions "a production model" or needs concrete numbers, derive them from this reference.
+
+**Keeping it current:** At the start of each problem generation, if the reference architecture is >3 months old, do a quick web search to check if a new open-weight SOTA has been released. Update this section if so.
+
 ## Design Philosophy
 
 These principles must hold for every problem generated:
