@@ -182,3 +182,30 @@ Provide 2-3 concrete variations that deepen understanding. Good extensions:
 - **Connect it**: use the output as input to another component
 
 Skip for 10m drills. These are for students who finish early or want to push further.
+
+## Anki Cards Cell (all budgets, final cell)
+
+```markdown
+## Anki Cards
+
+Add these to your deck:
+
+**Card 1**
+Front: [question that mirrors a real recall context — when would you need this fact?]
+Back: [1-5 words. Atomic. One fact per card.]
+
+**Card 2**
+Front: [different angle on the core concept]
+Back: [1-5 words]
+
+**Card 3**
+Front: [operational/debugging angle — "what's wrong if you see X?"]
+Back: [1-5 words]
+```
+
+Card design rules (per [LessWrong Anki guide](https://www.lesswrong.com/posts/7Q7DPSk4iGFJd8DRk)):
+- **Atomic**: 1-5 words on the back. If you need more, split into two cards.
+- **Real-context prompts**: Front should mirror when you'd actually need to recall this — in an interview, debugging a training run, reading a paper. Not "what is X?" but "you see Y happening, what's the cause?"
+- **No info in the prompt**: Don't put to-be-learned material on the front.
+- **Multiple angles**: The 3 cards should cover different retrieval paths to the same core knowledge — formula, intuition, and operational/diagnostic.
+- **No cloze deletion**: Full question → short answer, not fill-in-the-blank.
