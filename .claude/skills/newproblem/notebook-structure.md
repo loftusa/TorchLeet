@@ -25,6 +25,9 @@ That's it. No background. No formulas. No references. The student either knows i
 ## Key Formula
 $$[The core formula in LaTeX]$$
 
+**Where:**
+- [Define every variable and symbol in the formula. No term left undefined.]
+
 ## References
 [arxiv/paper link if applicable]
 ```
@@ -51,6 +54,8 @@ Same as 1-hour, plus:
 Provide ALL imports, data setup, model setup, and boilerplate. The student should be writing their first TODO within 60 seconds of opening the notebook. Every second spent on setup is a second not spent learning.
 
 For papers: include synthetic data that demonstrates the concept without requiring large downloads. Keep it self-contained.
+
+**Synthetic data rule:** Every synthetic tensor must have the **exact same shape, dtype, and semantic role** as the real tensor it stands in for. If the student's code would receive `(batch, seq_len, hidden_dim)` from a real base model, the synthetic data must be `(batch, seq_len, hidden_dim)` — not a lookup table or proxy that happens to produce the right shape after indexing. Name variables to match what they'd be called in production (e.g., `hidden_states` not `fake_embeddings`). Add a comment mapping each synthetic tensor to its real-world origin (e.g., `# same shape as base_model(tokens).hidden_states[-1]`).
 
 ## Cells 2+: Per-Part Structure
 
