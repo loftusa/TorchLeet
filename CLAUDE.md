@@ -63,6 +63,8 @@ TorchLeet/
 │   ├── 02-Agent-Eval-Harness/ # Agent evaluation harness
 │   ├── 03-Codenames-AI/      # AI for Codenames board game
 │   └── 04-Safety-Evaluation-Pipeline/  # Red-team campaign analysis (ISC paper)
+├── rlhf/
+│   └── 01-Reward-Model/       # Bradley-Terry reward model training
 └── valsai_interview/          # Interview prep scripts
 ```
 
@@ -129,7 +131,10 @@ Each problem directory typically contains:
 - LLM-as-Judge evaluation
 - Agent evaluation harness
 - Codenames AI (board game AI)
-- Safety Evaluation Pipeline: Red-team campaign analysis based on ISC paper (Wu et al., 2026) — harm taxonomy schemas, attack success rates, per-category/vector effectiveness matrices, policy compliance gap analysis, Cohen's kappa inter-rater reliability, bootstrap confidence intervals, model comparison radar plots, campaign dashboard heatmaps, temporal safety trends, and data-driven campaign prioritization scoring
+- Safety Evaluation Pipeline: Red-team campaign analysis based on ISC paper
+
+**RLHF Set:**
+- Reward Model: Bradley-Terry pairwise ranking loss, last-token pooling, preference pair training, reward distribution analysis (Wu et al., 2026) — harm taxonomy schemas, attack success rates, per-category/vector effectiveness matrices, policy compliance gap analysis, Cohen's kappa inter-rater reliability, bootstrap confidence intervals, model comparison radar plots, campaign dashboard heatmaps, temporal safety trends, and data-driven campaign prioritization scoring
 
 ## LLM Problem Ordering Philosophy
 

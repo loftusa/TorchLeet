@@ -153,6 +153,12 @@ Hands-on practice problems for real-world ML engineering:
 3. [Codenames AI](practice/03-Codenames-AI/) - AI for Codenames board game
 4. [Safety Evaluation Pipeline](practice/04-Safety-Evaluation-Pipeline/isc-safety-eval-Question.ipynb) [(Solution)](practice/04-Safety-Evaluation-Pipeline/isc-safety-eval.ipynb) - Red-team campaign analysis pipeline based on Internal Safety Collapse ([Wu et al., 2026](https://arxiv.org/abs/2603.23509)): harm taxonomy, attack success rates, Cohen's kappa, bootstrap CIs, policy compliance gaps, campaign heatmaps, and prioritization scoring
 
+## RLHF & Alignment
+
+Deep-dive into reinforcement learning from human feedback — reward models, PPO, DPO, and training infrastructure:
+
+1. [Reward Model with Bradley-Terry Loss](rlhf/01-Reward-Model/reward-model-Question.ipynb) [(Solution)](rlhf/01-Reward-Model/reward-model.ipynb) - Last-token pooling, pairwise ranking loss, preference pair training
+
 ---
 
 **What's cool? 🚀**
