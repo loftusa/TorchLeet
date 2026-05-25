@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "problem": "rlhf/01-Reward-Model",
+    "completed_date": "2026-05-25",
+    "reviews": [],
+    "schedule": [3, 7, 21, 60]
+  }
+]
