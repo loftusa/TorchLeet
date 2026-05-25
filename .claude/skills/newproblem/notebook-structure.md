@@ -57,6 +57,8 @@ For papers: include synthetic data that demonstrates the concept without requiri
 
 **Synthetic data rule:** Every synthetic tensor must have the **exact same shape, dtype, and semantic role** as the real tensor it stands in for. If the student's code would receive `(batch, seq_len, hidden_dim)` from a real base model, the synthetic data must be `(batch, seq_len, hidden_dim)` — not a lookup table or proxy that happens to produce the right shape after indexing. Name variables to match what they'd be called in production (e.g., `hidden_states` not `fake_embeddings`). Add a comment mapping each synthetic tensor to its real-world origin (e.g., `# same shape as base_model(tokens).hidden_states[-1]`).
 
+**Synthetic oracle/loss rule:** When a problem needs an oracle function, ground-truth signal, or synthetic loss target, it must **structurally resemble the real thing**. For example, a reward model's oracle should be a fixed linear projection of hidden states (mimicking a learned reward head), not `tensor.mean()` — because the student should build intuition for what the real optimization landscape looks like. The oracle can be simple, but it should exercise the same structural pattern the model will learn in production. Ask: "would a practitioner recognize this setup as a simplified version of the real pipeline?"
+
 ## Cells 2+: Per-Part Structure
 
 For each part, exactly **three cells**:
