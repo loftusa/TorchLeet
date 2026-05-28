@@ -143,6 +143,7 @@ Practice by reimplementing key ideas from research papers:
 6. [Influence Functions](papers/influence-functions/influence-functions-Question.ipynb) [(Solution)](papers/influence-functions/influence-functions.ipynb) - Classical training data attribution via inverse-Hessian vector products ([Koh & Liang, 2017](https://arxiv.org/abs/1703.04730))
 7. [TrackStar](papers/trackstar/trackstar-Question.ipynb) [(Solution)](papers/trackstar/trackstar.ipynb) - Scalable influence and fact tracing for LLM pretraining via EKFAC preconditioning, preconditioner mixing, and FAISS indexing ([Chang et al., 2024](https://arxiv.org/abs/2410.17413))
 8. [EKFAC](papers/ekfac/ekfac-Question.ipynb) [(Solution)](papers/ekfac/ekfac.ipynb) - Eigenvalue-corrected Kronecker-Factored Approximate Curvature for efficient Hessian approximation in influence functions ([George et al., NeurIPS 2018](https://arxiv.org/abs/1806.03884))
+9. [SAE Concept Manifolds](papers/sae-concept-manifolds/sae-concept-manifolds-Question.ipynb) [(Solution)](papers/sae-concept-manifolds/sae-concept-manifolds.ipynb) - TopK Sparse Autoencoder and a per-atom angular-selectivity diagnostic that reproduces the paper's "dilution" finding on a 2-d circle embedded in 64-d ([Bhalla et al., 2026](https://arxiv.org/abs/2604.28119))
 
 ## Applied ML Practice
 

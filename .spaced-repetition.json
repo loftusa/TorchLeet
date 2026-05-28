@@ -4,5 +4,11 @@
     "completed_date": "2026-05-25",
     "reviews": [],
     "schedule": [3, 7, 21, 60]
+  },
+  {
+    "problem": "papers/sae-concept-manifolds",
+    "completed_date": "2026-05-28",
+    "reviews": [],
+    "schedule": [3, 7, 21, 60]
   }
 ]
