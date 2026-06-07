@@ -103,23 +103,23 @@ These problems are for advanced users who want to push their PyTorch skills to t
 
 Each question is designed to take you one step closer to building your own LLM.
 
-1. [Implement RMS Norm](llm/01-RMS-Norm/rms-norm.ipynb)
-2. [Implement Sinusoidal Positional Embeddings](llm/02-Sinusoidal-Positional-Embedding/sinusoidal-q7-Question.ipynb) [(Solution)](llm/02-Sinusoidal-Positional-Embedding/sinusoidal-q7.ipynb)
-3. [Implement Attention from Scratch](llm/03-Implement-Attention-from-Scratch/attention-q4-Question.ipynb) [(Solution)](llm/03-Implement-Attention-from-Scratch/attention-q4.ipynb) - Includes KV Cache
-4. [Implement Multi-Head Attention from Scratch](llm/04-Multi-Head-Attention/multi-head-attention-q5-Question.ipynb) [(Solution)](llm/04-Multi-Head-Attention/multi-head-attention-q5.ipynb) - Includes KV Cache
-5. [Implement Byte Pair Encoding from Scratch](llm/05-Byte-Pair-Encoder/BPE-q3-Question.ipynb) [(Solution)](llm/05-Byte-Pair-Encoder/BPE-q3.ipynb)
-6. [Implement RoPE (Rotary Positional Embeddings)](llm/06-Rotary-Positional-Embedding/rope-q8-Question.ipynb) [(Solution)](llm/06-Rotary-Positional-Embedding/rope-q8.ipynb)
-7. [Implement Grouped Query Attention from Scratch](llm/07-Grouped-Query-Attention/grouped-query-attention-Question.ipynb) [(Solution)](llm/07-Grouped-Query-Attention/grouped-query-attention.ipynb) - Includes GQA + KV Cache memory savings
-8. [Implement KV Cache in Multi-Head Attention](llm/08-KV-Cache/kv-cache-Question.ipynb) [(Solution)](llm/08-KV-Cache/kv-cache.ipynb)
-9. [Implement KL Divergence Loss](llm/09-KL-Divergence-Loss/kl-divergence-Question.ipynb) [(Solution)](llm/09-KL-Divergence-Loss/kl-divergence.ipynb)
+1. [Implement RMS Norm](llm/01-RMS-Norm/rms-norm-Question.ipynb) [(Solution)](llm/01-RMS-Norm/_solutions/rms-norm.ipynb)
+2. [Implement Sinusoidal Positional Embeddings](llm/02-Sinusoidal-Positional-Embedding/sinusoidal-q7-Question.ipynb) [(Solution)](llm/02-Sinusoidal-Positional-Embedding/_solutions/sinusoidal-q7.ipynb)
+3. [Implement Attention from Scratch](llm/03-Implement-Attention-from-Scratch/attention-q4-Question.ipynb) [(Solution)](llm/03-Implement-Attention-from-Scratch/_solutions/attention-q4.ipynb) - Includes KV Cache
+4. [Implement Multi-Head Attention from Scratch](llm/04-Multi-Head-Attention/multi-head-attention-q5-Question.ipynb) [(Solution)](llm/04-Multi-Head-Attention/_solutions/multi-head-attention-q5.ipynb) - Includes KV Cache
+5. [Implement Byte Pair Encoding from Scratch](llm/05-Byte-Pair-Encoder/BPE-q3-Question.ipynb) [(Solution)](llm/05-Byte-Pair-Encoder/_solutions/BPE-q3.ipynb)
+6. [Implement RoPE (Rotary Positional Embeddings)](llm/06-Rotary-Positional-Embedding/rope-q8-Question.ipynb) [(Solution)](llm/06-Rotary-Positional-Embedding/_solutions/rope-q8.ipynb)
+7. [Implement Grouped Query Attention from Scratch](llm/07-Grouped-Query-Attention/grouped-query-attention-Question.ipynb) [(Solution)](llm/07-Grouped-Query-Attention/_solutions/grouped-query-attention.ipynb) - Includes GQA + KV Cache memory savings
+8. [Implement KV Cache in Multi-Head Attention](llm/08-KV-Cache/kv-cache-Question.ipynb) [(Solution)](llm/08-KV-Cache/_solutions/kv-cache.ipynb)
+9. [Implement KL Divergence Loss](llm/09-KL-Divergence-Loss/kl-divergence-Question.ipynb) [(Solution)](llm/09-KL-Divergence-Loss/_solutions/kl-divergence.ipynb)
 10. [Create Embeddings from an LLM](llm/10-Create-Embeddings-out-of-an-LLM/embeddings-q2.ipynb) - Extract sentence embeddings using SmolLM2-135M
-11. [Implement Temperature Sampling](llm/11-Temperature-Sampling/temperature-sampling-Question.ipynb) [(Solution)](llm/11-Temperature-Sampling/temperature-sampling.ipynb) - Control randomness in text generation
-12. [Implement Top-K and Top-P (Nucleus) Sampling](llm/12-Top-K-Top-P-Sampling/sampling-Question.ipynb) [(Solution)](llm/12-Top-K-Top-P-Sampling/sampling.ipynb) - Filter token distributions for quality
-13. [Implement Beam Search](llm/13-Beam-Search/beam-search-Question.ipynb) [(Solution)](llm/13-Beam-Search/beam-search.ipynb) - Search-based decoding with length normalization
-14. [Implement LoRA (Low-Rank Adaptation)](llm/14-LoRA/lora-Question.ipynb) [(Solution)](llm/14-LoRA/lora.ipynb) - Parameter-efficient fine-tuning
-15. [Implement SmolLM from Scratch](llm/15-SmolLM/smollm-q12-Question.ipynb) [(Solution)](llm/15-SmolLM/smollm-q12.ipynb)
+11. [Implement Temperature Sampling](llm/11-Temperature-Sampling/temperature-sampling-Question.ipynb) [(Solution)](llm/11-Temperature-Sampling/_solutions/temperature-sampling.ipynb) - Control randomness in text generation
+12. [Implement Top-K and Top-P (Nucleus) Sampling](llm/12-Top-K-Top-P-Sampling/sampling-Question.ipynb) [(Solution)](llm/12-Top-K-Top-P-Sampling/_solutions/sampling.ipynb) - Filter token distributions for quality
+13. [Implement Beam Search](llm/13-Beam-Search/beam-search-Question.ipynb) [(Solution)](llm/13-Beam-Search/_solutions/beam-search.ipynb) - Search-based decoding with length normalization
+14. [Implement LoRA (Low-Rank Adaptation)](llm/14-LoRA/lora-Question.ipynb) [(Solution)](llm/14-LoRA/_solutions/lora.ipynb) - Parameter-efficient fine-tuning
+15. [Implement SmolLM from Scratch](llm/15-SmolLM/smollm-q12-Question.ipynb) [(Solution)](llm/15-SmolLM/_solutions/smollm-q12.ipynb)
 16. [Implement Flash Attention Forward Kernel with Triton](llm/flash-attention.ipynb) - Optimize attention computation with tiling
-17. [Implement INT8 Quantization](llm/17-Quantization/quantization-Question.ipynb) [(Solution)](llm/17-Quantization/quantization.ipynb) - Reduce model memory with per-channel quantization
+17. [Implement INT8 Quantization](llm/17-Quantization/quantization-Question.ipynb) [(Solution)](llm/17-Quantization/_solutions/quantization.ipynb) - Reduce model memory with per-channel quantization
 18. Implement QLoRA (Quantized LoRA) *(Coming Soon)*
 19. Implement Predictive Prefill with Speculative Decoding *(Coming Soon)*
 20. Mix two models to create a Mixture of Experts *(Coming Soon)*
@@ -137,13 +137,13 @@ Practice by reimplementing key ideas from research papers:
 1. [GLP Meta-Model](papers/glp-meta-model/) - GLP meta-model paper implementation
 2. [MFA Local Geometry](papers/mfa-local-geometry/) - MFA local geometry paper implementation
 3. [Doc-to-LoRA](papers/doc-to-lora/doc-to-lora-Question.ipynb) [(Solution)](papers/doc-to-lora/doc-to-lora.ipynb) - Hypernetwork that generates LoRA adapters from documents in a single forward pass ([Charakorn et al., 2026](https://arxiv.org/abs/2602.15902))
-   - [Doc-to-LoRA v2](papers/doc-to-lora/doc-to-lora-2-Question.ipynb) [(Solution)](papers/doc-to-lora/doc-to-lora-2.ipynb) - 30-min focused rebuild: Perceiver aggregator, top-K distillation loss, HyperLoRA head, end-to-end pipeline
+   - [Doc-to-LoRA v2](papers/doc-to-lora/doc-to-lora-2-Question.ipynb) [(Solution)](papers/doc-to-lora/_solutions/doc-to-lora-2.ipynb) - 30-min focused rebuild: Perceiver aggregator, top-K distillation loss, HyperLoRA head, end-to-end pipeline
 4. [Concept Influence](papers/concept-influence/concept-influence-Question.ipynb) [(Solution)](papers/concept-influence/concept-influence.ipynb) - Training data attribution via linear probes and Vector Filter ([Kowal et al., 2025](https://arxiv.org/abs/2602.14869))
 5. [TRAK](papers/trak/trak-Question.ipynb) [(Solution)](papers/trak/trak.ipynb) - Scalable training data attribution using random projections and the Johnson-Lindenstrauss lemma ([Park et al., 2023](https://arxiv.org/abs/2303.14186))
 6. [Influence Functions](papers/influence-functions/influence-functions-Question.ipynb) [(Solution)](papers/influence-functions/influence-functions.ipynb) - Classical training data attribution via inverse-Hessian vector products ([Koh & Liang, 2017](https://arxiv.org/abs/1703.04730))
 7. [TrackStar](papers/trackstar/trackstar-Question.ipynb) [(Solution)](papers/trackstar/trackstar.ipynb) - Scalable influence and fact tracing for LLM pretraining via EKFAC preconditioning, preconditioner mixing, and FAISS indexing ([Chang et al., 2024](https://arxiv.org/abs/2410.17413))
 8. [EKFAC](papers/ekfac/ekfac-Question.ipynb) [(Solution)](papers/ekfac/ekfac.ipynb) - Eigenvalue-corrected Kronecker-Factored Approximate Curvature for efficient Hessian approximation in influence functions ([George et al., NeurIPS 2018](https://arxiv.org/abs/1806.03884))
-9. [SAE Concept Manifolds](papers/sae-concept-manifolds/sae-concept-manifolds-Question.ipynb) [(Solution)](papers/sae-concept-manifolds/sae-concept-manifolds.ipynb) - TopK Sparse Autoencoder and a per-atom angular-selectivity diagnostic that reproduces the paper's "dilution" finding on a 2-d circle embedded in 64-d ([Bhalla et al., 2026](https://arxiv.org/abs/2604.28119))
+9. [SAE Concept Manifolds](papers/sae-concept-manifolds/sae-concept-manifolds-Question.ipynb) [(Solution)](papers/sae-concept-manifolds/_solutions/sae-concept-manifolds.ipynb) - TopK Sparse Autoencoder and a per-atom angular-selectivity diagnostic that reproduces the paper's "dilution" finding on a 2-d circle embedded in 64-d ([Bhalla et al., 2026](https://arxiv.org/abs/2604.28119))
 
 ## Applied ML Practice
 
@@ -152,13 +152,13 @@ Hands-on practice problems for real-world ML engineering:
 1. [LLM-as-Judge](practice/01-LLM-as-Judge/) - LLM evaluation as judge
 2. [Agent Eval Harness](practice/02-Agent-Eval-Harness/) - Agent evaluation harness
 3. [Codenames AI](practice/03-Codenames-AI/) - AI for Codenames board game
-4. [Safety Evaluation Pipeline](practice/04-Safety-Evaluation-Pipeline/isc-safety-eval-Question.ipynb) [(Solution)](practice/04-Safety-Evaluation-Pipeline/isc-safety-eval.ipynb) - Red-team campaign analysis pipeline based on Internal Safety Collapse ([Wu et al., 2026](https://arxiv.org/abs/2603.23509)): harm taxonomy, attack success rates, Cohen's kappa, bootstrap CIs, policy compliance gaps, campaign heatmaps, and prioritization scoring
+4. [Safety Evaluation Pipeline](practice/04-Safety-Evaluation-Pipeline/isc-safety-eval-Question.ipynb) [(Solution)](practice/04-Safety-Evaluation-Pipeline/_solutions/isc-safety-eval.ipynb) - Red-team campaign analysis pipeline based on Internal Safety Collapse ([Wu et al., 2026](https://arxiv.org/abs/2603.23509)): harm taxonomy, attack success rates, Cohen's kappa, bootstrap CIs, policy compliance gaps, campaign heatmaps, and prioritization scoring
 
 ## RLHF & Alignment
 
 Deep-dive into reinforcement learning from human feedback — reward models, PPO, DPO, and training infrastructure:
 
-1. [Reward Model with Bradley-Terry Loss](rlhf/01-Reward-Model/reward-model-Question.ipynb) [(Solution)](rlhf/01-Reward-Model/reward-model.ipynb) - Last-token pooling, pairwise ranking loss, preference pair training
+1. [Reward Model with Bradley-Terry Loss](rlhf/01-Reward-Model/reward-model-Question.ipynb) [(Solution)](rlhf/01-Reward-Model/_solutions/reward-model.ipynb) - Last-token pooling, pairwise ranking loss, preference pair training
 
 ---
 

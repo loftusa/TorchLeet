@@ -1552,6 +1552,7 @@ if __name__ == "__main__":
     # Generate Solution notebook
     s_cells = build_cells(is_solution=True)
     s_nb = notebook(s_cells)
-    with open("isc-safety-eval.ipynb", "w") as f:
+    os.makedirs("_solutions", exist_ok=True)
+    with open("_solutions/isc-safety-eval.ipynb", "w") as f:
         json.dump(s_nb, f, indent=1)
     print("Created: isc-safety-eval.ipynb")
