@@ -49,6 +49,27 @@ Same as 1-hour, plus:
 [1-2 sentences: what makes this paper's approach novel vs. prior work]
 ```
 
+## Deconstruct-First Cells (only with `--deconstruct-first`, 1h/2h)
+
+When SKILL.md Step 1.5 is active, insert these two cells immediately after the Session Header and BEFORE the imports/parts, so the student sees only the title/abstract/link first. Reuse your Step 1 ranking verbatim — zero extra cost. Do NOT also emit the Cell-0 "Component Breakdown" (that would give the answer away).
+
+```markdown
+## Decompose this first (before scrolling down)
+
+This paper/topic breaks into a handful of atomic sub-skills. Before you read any
+further: list the sub-skills you think it decomposes into, then rank them by
+learning value (which 20% carry 80% of the understanding?). Write your answer,
+then expand the reveal to compare — it's *one* defensible split, not ground truth.
+
+<details><summary>One reasonable decomposition (compare, don't defer to it)</summary>
+
+[Your Step 1 atomic sub-skill list + 80/20 ranking, verbatim, 1 line each]
+[+ one line: "a stronger split might additionally surface ___"]
+</details>
+```
+
+(The Part structure below still partially telegraphs the decomposition, so this is a useful-but-imperfect meta-rep — claim encoding-depth/generation benefit, not retention.)
+
 ## Cell 1: Imports + Setup (scaffolded, all budgets)
 
 Provide ALL imports, data setup, model setup, and boilerplate. The student should be writing their first TODO within 60 seconds of opening the notebook. Every second spent on setup is a second not spent learning.
@@ -76,6 +97,11 @@ For each part, exactly **three cells**:
 
 The prediction prompt forces the student to form a mental model before writing code. Skip it for 10m drills (pure recall — no time for metacognition). Include it for 30m+ budgets.
 
+**Commit quantifiable predictions (don't leave them as dead prose).** An unchecked prediction recruits almost none of the generation effect, and a wrong prediction never confronted with the truth wastes the highest-value learning moment (hypercorrection). So:
+- For any prediction that resolves to a **number, shape, or count**, the FIRST line of Cell B (the stub) is a committed literal the student fills *before* coding, e.g. `predicted_xhat_std = ...  # commit a number before you code` or `predicted_shape = (...)`. Reference it in Cell C (see below) so Step 5.3's variable-reference check enforces it.
+- For **qualitative/relational** predictions ("concentrated or spread?", "does the regime switch?"), keep them as prose — do NOT force them into a literal.
+- Skip entirely for 10m drills.
+
 Hint rules:
 - **10m drills**: Zero hints. None.
 - **30m**: 0-1 hints per part (only for Tier 1 sub-skills)
@@ -83,6 +109,7 @@ Hint rules:
 - **2h**: 1-3 hints per part (only for Tier 1 sub-skills)
 - **NEVER hint functions the student has used before** (check CLAUDE.md)
 - Hints go IN the part, not in the opening section -- help at point of need
+- **Insight tier is separate from function hints**: if the sub-skill is *idea-novel* (Step 1.4), also emit the one-sentence insight + self-explanation prompt from scaffolding-tiers.md "Insight Tier" — even when the function gets zero hints. The insight nudge describes the *idea*; it is not a function hint.
 
 ### Cell B — Implementation Stub (code)
 
@@ -96,6 +123,11 @@ torch.manual_seed(42)
 # [test tensor setup]
 
 result = student_function(test_input)
+
+# Prediction reveal (BEFORE any raising assert, so a buggy impl still gets confronted).
+# Include one line per committed prediction from Cell A. No pass/fail — the gap IS the signal.
+print(f"  You predicted x_hat std ~{predicted_xhat_std}; actual {result.std():.3f}"
+      f"  (a large gap is the most valuable moment of the session)")
 
 # Shape
 assert result.shape == expected_shape, f"Shape: expected {expected_shape}, got {result.shape}"
@@ -127,11 +159,23 @@ print(f"\nPart {N} complete.")
 ```
 
 Key design choices:
+- **Reveal committed predictions before the raising asserts** — the prediction-vs-truth confrontation (generation + hypercorrection effect) is the point; if it printed after an assert that raises, a wrong implementation would swallow it in a traceback exactly when the student erred most.
 - Print intermediate statistics (range, mean, std) so the student builds intuition for what correct tensors look like
 - Assertion messages explain the invariant's rationale, not just state it
 - Diagnostics run even on success -- the student should learn what "correct" looks like
 - On failure, show a side-by-side comparison (first 8 elements, max/mean diff, location) so the student can self-correct without asking for help
 - No emoji in test output
+
+## Debug Modality (`--mode debug`)
+
+A varied-practice alternative to stub-filling (see SKILL.md Step 3 for the gates: known-operations only; Cell C reused as oracle). Cells differ as follows:
+
+- **Cell 0 (header)**: Goal becomes "Find and fix the bug(s)." State the count up front: "This implementation has **exactly N** bug(s) (N = 1–3). The tests below will tell you when it's correct."
+- **Cell A (per part)**: replace "Predict before you code" with **"Predict before you run"**: "Read the implementation. Which invariant in the test do you expect to fail, and why?" (A committed guess at the failing invariant — same generation/hypercorrection benefit, now aimed at fault localization.)
+- **Cell B**: ship the Solution's **working** implementation with the planted bug(s) inline. Plant bugs ONLY where Cell C's existing invariant assert or reference-match diff will actually fire — e.g. softmax over the wrong dim → "weights don't sum to 1" assert; a dropped `1/sqrt(d)` scale → reference-match diff; an off-by-one causal mask → a shape/property assert. Never plant a bug that no existing test catches.
+- **Cell C**: **unchanged, verbatim** — it is the oracle. The student edits Cell B until Cell C passes.
+
+The `_solutions/` notebook holds the correct (un-bugged) implementation as the answer key.
 
 ## Recall Embedding (30m+ problems)
 
@@ -139,7 +183,9 @@ For problems 30 minutes or longer, embed recall parts that require the student t
 
 ```markdown
 ## Part N: [Previously Learned Concept] (Recall)
-You implemented this in [previous problem]. Reproduce it here from memory -- do not look at your old solution.
+You implemented this in [previous problem]. Reproduce it here from memory -- your old
+worked solution is in that problem's `_solutions/` folder; opening it ends the rep, so
+only consult it after you've produced or genuinely failed an attempt.
 ```
 
 Use Tier 3 scaffolding for these. This creates spaced repetition within the session and interleaves old + new skills.
@@ -152,18 +198,58 @@ Use Tier 3 scaffolding for these. This creates spaced repetition within the sess
 
 ## Final Cell: Session Debrief (all budgets except 10m)
 
+Two cells: a free-recall markdown cell, then a one-line session-log code cell.
+
+**Debrief (markdown):**
 ```markdown
 ## Session Debrief
 
-Without scrolling up, answer in your head:
+Write your answers into the code cell below (typing is overt retrieval — far
+stronger than answering "in your head"). Don't scroll up.
 1. What is the core formula for [topic]?
 2. What is the key PyTorch function for [central operation]?
 3. What shape does [key tensor] have and why?
 
-**Challenge**: Close this notebook, open a blank one, and rewrite Part [hardest part number] from scratch without looking back.
+**Check yourself**: your worked solution is in `_solutions/` — open it (and the
+paper) to grade your answers. Opening it ends the retrieval rep, so answer first.
+
+**Challenge**: Close this notebook, open a blank one, and rewrite Part [hardest
+part number] from scratch without looking back.
 ```
 
-This final retrieval practice cements the session. It's not optional decoration -- it's where a large fraction of long-term retention is created.
+```python
+debrief = """
+1.
+2.
+3.
+"""  # type your recall here before checking _solutions/
+```
+
+**Session log (code) — closes the feedback loop.** The generator PRE-FILLS `problem`, `budget_min`, and each part's `n`/`tier`; the student fills only `actual_min`, each `outcome`, `difficulty`, and `stuck` (~5 s). The next `/newproblem` reads this file in Step 2 to scaffold decayed skills one tier easier.
+
+```python
+# --- Session log: fill the `___` then run (appends one line to .practice-log.jsonl) ---
+import json, datetime, pathlib
+_root = next(p for p in [pathlib.Path.cwd(), *pathlib.Path.cwd().parents]
+            if (p / ".git").exists() or (p / ".spaced-repetition.json").exists())
+record = {
+    "problem": "<dir path, pre-filled, e.g. papers/sae-concept-manifolds>",
+    "date": datetime.date.today().isoformat(),
+    "budget_min": 30,                                   # pre-filled
+    "actual_min": ___,                                  # how long it really took
+    "parts": [                                          # n + tier pre-filled; set outcome
+        {"n": 1, "tier": 3, "outcome": "___"},          # unaided | hint | solution | failed
+        {"n": 2, "tier": 2, "outcome": "___"},
+    ],
+    "difficulty": ___,                                  # 1 (trivial) .. 5 (over my head)
+    "stuck": "___",                                     # one phrase: where you got stuck
+}
+with open(_root / ".practice-log.jsonl", "a") as f:
+    f.write(json.dumps(record) + "\n")
+print("logged ->", _root / ".practice-log.jsonl")
+```
+
+This final retrieval practice cements the session. It's not optional decoration -- it's where a large fraction of long-term retention is created. The log is append-only JSONL (crash-safe); a missing file just means the next problem falls back to the functions-list tier rule.
 
 ## Extension Cell (30m+ problems, after Session Debrief)
 

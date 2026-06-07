@@ -3,12 +3,330 @@
     "problem": "rlhf/01-Reward-Model",
     "completed_date": "2026-05-25",
     "reviews": [],
-    "schedule": [3, 7, 21, 60]
+    "schedule": [
+      3,
+      7,
+      21,
+      60
+    ]
   },
   {
     "problem": "papers/sae-concept-manifolds",
     "completed_date": "2026-05-28",
     "reviews": [],
-    "schedule": [3, 7, 21, 60]
+    "schedule": [
+      3,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "llm/01-RMS-Norm",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      3,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "llm/02-Sinusoidal-Positional-Embedding",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      4,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "llm/03-Implement-Attention-from-Scratch",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      5,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "llm/04-Multi-Head-Attention",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      6,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "llm/05-Byte-Pair-Encoder",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      7,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "llm/06-Rotary-Positional-Embedding",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      8,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "llm/07-Grouped-Query-Attention",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      9,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "llm/08-KV-Cache",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      10,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "llm/09-KL-Divergence-Loss",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      11,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "llm/11-Temperature-Sampling",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      12,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "llm/12-Top-K-Top-P-Sampling",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      13,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "llm/13-Beam-Search",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      14,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "llm/14-LoRA",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      15,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "llm/15-SmolLM",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      16,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "llm/17-Quantization",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      17,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "llm/18-VLM-Attention",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      18,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "numerai/01-FinBERT-Sentiment-Pipeline",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      19,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "numerai/02-Text-Embeddings-as-Features",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      20,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "numerai/03-SEC-Filing-Features",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      21,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "numerai/04-Company-Knowledge-Graphs",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      22,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "numerai/05-Contrastive-Financial-Embeddings",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      23,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "numerai/07-Finetune-Financial-LLM",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      3,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "numerai/08-Common-Crawl-Pipeline",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      4,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "papers/doc-to-lora",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      5,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "papers/glp-meta-model",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      6,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "papers/mfa-local-geometry",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      7,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "practice/03-Codenames-AI",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      8,
+      7,
+      21,
+      60
+    ]
+  },
+  {
+    "problem": "practice/04-Safety-Evaluation-Pipeline",
+    "completed_date": "2026-06-07",
+    "reviews": [],
+    "schedule": [
+      9,
+      7,
+      21,
+      60
+    ]
   }
 ]
