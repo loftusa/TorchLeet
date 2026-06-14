@@ -328,5 +328,16 @@
       21,
       60
     ]
+  },
+  {
+    "problem": "llm/19-MiniMax-Sparse-Attention",
+    "completed_date": "2026-06-14",
+    "reviews": [],
+    "schedule": [
+      3,
+      7,
+      21,
+      60
+    ]
   }
 ]

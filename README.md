@@ -120,7 +120,8 @@ Each question is designed to take you one step closer to building your own LLM.
 15. [Implement SmolLM from Scratch](llm/15-SmolLM/smollm-q12-Question.ipynb) [(Solution)](llm/15-SmolLM/_solutions/smollm-q12.ipynb)
 16. [Implement Flash Attention Forward Kernel with Triton](llm/flash-attention.ipynb) - Optimize attention computation with tiling
 17. [Implement INT8 Quantization](llm/17-Quantization/quantization-Question.ipynb) [(Solution)](llm/17-Quantization/_solutions/quantization.ipynb) - Reduce model memory with per-channel quantization
-18. Implement QLoRA (Quantized LoRA) *(Coming Soon)*
+18. [Implement MiniMax Sparse Attention (Blockwise Top-k)](llm/19-MiniMax-Sparse-Attention/sparse-attention-Question.ipynb) [(Solution)](llm/19-MiniMax-Sparse-Attention/_solutions/sparse-attention.ipynb) - Block-score, top-k select, exact attention over selected blocks
+19. Implement QLoRA (Quantized LoRA) *(Coming Soon)*
 19. Implement Predictive Prefill with Speculative Decoding *(Coming Soon)*
 20. Mix two models to create a Mixture of Experts *(Coming Soon)*
 21. Apply SFT on SmolLM *(Coming Soon)*

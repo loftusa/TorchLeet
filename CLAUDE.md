@@ -40,6 +40,7 @@ TorchLeet/
 │   ├── 15-SmolLM/
 │   ├── 17-Quantization/
 │   ├── 18-VLM-Attention/
+│   ├── 19-MiniMax-Sparse-Attention/
 │   └── flash-attention.ipynb
 ├── numerai/
 │   ├── 01-FinBERT-Sentiment-Pipeline/
@@ -89,7 +90,7 @@ Each problem directory typically contains:
 
 **LLM Set Problems:**
 - Loss functions (KL Divergence for distillation, discrete and continuous variants)
-- Attention mechanisms (scaled dot-product, multi-head, grouped-query, VLM attention)
+- Attention mechanisms (scaled dot-product, multi-head, grouped-query, VLM attention, blockwise sparse/top-k attention — MiniMax Sparse Attention)
 - Positional encodings (sinusoidal, RoPE)
 - Normalization layers (RMSNorm)
 - Tokenization (Byte-Pair Encoding)
