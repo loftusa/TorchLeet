@@ -420,7 +420,7 @@ Functions the user has already implemented in Question notebooks. When creating 
 `torch.float32`, `torch.float16`, `torch.bfloat16`, `torch.long`, `torch.int32`, `torch.int8`, `torch.uint8`, `torch.bool`
 
 **Device Operations:**
-`torch.cuda.is_available()`, `torch.device()`, `.cuda()`, `.cpu()`
+`torch.cuda.is_available()`, `torch.device()`, `.cuda()`, `.cpu()`, `tensor.device` (property for accessing a tensor's device, e.g., `torch.arange(n, device=x.device)`)
 
 **Torch Math Operations:**
 `torch.sqrt`, `torch.rsqrt`, `torch.exp`, `torch.log`, `torch.sin`, `torch.cos`, `torch.round`, `torch.clamp`, `torch.einsum`, `torch.topk`, `torch.sort`, `torch.cumsum`, `torch.argsort`, `torch.masked_fill`, `.masked_fill_(mask, value)` (in-place), `torch.triu`, `torch.tril`, `torch.repeat_interleave`, `torch.multinomial`, `torch.gather`, `torch.logsumexp`, `torch.cdist`, `torch.randperm`, `torch.diag`, `torch.mv`, `torch.trapezoid`, `torch.allclose`, `torch.isclose` (element-wise bool comparison), `torch.inf` (infinity constant), `torch.chunk` (function form), `.pow()`, `.mean()`, `.abs()`, `.max()`, `.min()`, `.amax()`, `.exp()`, `.log()`, `@` (matmul), `torch.matmul()`, `torch.tanh`, `torch.sigmoid`, `torch.softmax`, `torch.relu`, `torch.bmm`, `torch.outer`, `torch.max` (function form with dim arg), `torch.eye`, `torch.argmin`, `.norm()`, `.median()`, `.trace()`, `.unique()`, `.argsort()` (tensor method), `torch.all`, `torch.logical_or()` (or `|` tensor operator), `torch.logical_not()` (or `~` bool tensor operator), `torch.isnan`, `torch.pi` (π constant), `torch.diff()` (consecutive differences along a dimension), `torch.count_nonzero()` (count non-zero elements), `.cos()` (tensor method, e.g. `theta.cos()`), `.sin()` (tensor method, e.g. `theta.sin()`), `.sort().values` and `.sort().indices` (namedtuple attribute access from `torch.sort()`/`.sort()`), `.sqrt()` (tensor method form, e.g. `eigvals.sqrt()`)
@@ -462,7 +462,7 @@ Functions the user has already implemented in Question notebooks. When creating 
 `@torch.jit.script`
 
 **torch.utils.data:**
-`torch.utils.data.Dataset`, `torch.utils.data.DataLoader`, `torch.utils.data.TensorDataset`, `__len__()`, `__getitem__()`
+`torch.utils.data.Dataset`, `torch.utils.data.DataLoader`, `torch.utils.data.TensorDataset`, `__len__()`, `__getitem__()`, `DataLoader(..., shuffle=True, drop_last=True)` (shuffle and drop_last params for training loops)
 
 **torch.utils.tensorboard:**
 `SummaryWriter`, `writer.add_scalar()`, `writer.close()`
@@ -504,7 +504,7 @@ Functions the user has already implemented in Question notebooks. When creating 
 `peft.LoraConfig`, `peft.TaskType`, `peft.get_peft_model()`, `model.print_trainable_parameters()`
 
 **nnsight:**
-`LanguageModel(model_name, device_map=...)`, `model.trace(inputs)`, `layer.output.save()`, `nnsight.save()`, `model.tokenizer` (attribute), `model.lm_head` (attribute), `model.model` (underlying PyTorch model attribute)
+`LanguageModel(model_name, device_map=..., dispatch=True)`, `model.trace(inputs)`, `layer.output.save()`, `nnsight.save()`, `model.tokenizer` (attribute), `model.lm_head` (attribute), `model.model` (underlying PyTorch model attribute), `model.model.layers[idx]` (indexed layer access for activation extraction), `model.model.layers[idx].output.save()` (save hidden state at specific layer)
 
 **nnterp:**
 `StandardizedTransformer(model_name, device_map=..., dispatch=True)`
