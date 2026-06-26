@@ -339,5 +339,16 @@
       21,
       60
     ]
+  },
+  {
+    "problem": "papers/probe-misalignment",
+    "completed_date": "2026-06-25",
+    "reviews": [],
+    "schedule": [
+      3,
+      7,
+      21,
+      60
+    ]
   }
 ]
