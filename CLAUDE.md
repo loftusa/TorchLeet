@@ -57,7 +57,8 @@ TorchLeet/
 │   ├── trackstar/            # TrackStar: scalable influence/fact tracing via EKFAC + preconditioner mixing (Chang et al. 2024)
 │   ├── ekfac/                # EKFAC: Eigenvalue-corrected Kronecker-Factored Approximate Curvature (George et al. 2018)
 │   ├── glp-meta-model/       # GLP meta-model paper implementation
-│   └── mfa-local-geometry/   # MFA local geometry paper implementation
+│   ├── mfa-local-geometry/   # MFA local geometry paper implementation
+│   └── jacobian-lens/        # Jacobian lens / global workspace: J_l = E[dh_final/dh_l], steering, coordinate patching, J-space pursuit (Transformer Circuits 2026)
 ├── practice/
 │   ├── 01-LLM-as-Judge/      # LLM evaluation as judge
 │   ├── 02-Agent-Eval-Harness/ # Agent evaluation harness
