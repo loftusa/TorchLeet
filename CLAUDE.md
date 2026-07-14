@@ -63,7 +63,8 @@ TorchLeet/
 │   ├── 01-LLM-as-Judge/      # LLM evaluation as judge
 │   ├── 02-Agent-Eval-Harness/ # Agent evaluation harness
 │   ├── 03-Codenames-AI/      # AI for Codenames board game
-│   └── 04-Safety-Evaluation-Pipeline/  # Red-team campaign analysis (ISC paper)
+│   ├── 04-Safety-Evaluation-Pipeline/  # Red-team campaign analysis (ISC paper)
+│   └── 05-Multi-Agent-Control-Collusion/  # AI-control safety metric, monitor collusion + paraphrase defense, prompt-infection propagation
 ├── rlhf/
 │   └── 01-Reward-Model/       # Bradley-Terry reward model training
 └── valsai_interview/          # Interview prep scripts
@@ -136,6 +137,7 @@ Each problem directory typically contains:
 - Agent evaluation harness
 - Codenames AI (board game AI)
 - Safety Evaluation Pipeline: Red-team campaign analysis based on ISC paper
+- Multi-Agent Safety (Control Evals, Collusion, Infection): synthesizes the AI-control / multi-agent-safety literature (Greenblatt et al. 2023 control evals; Shlegeris 2024 collusion + paraphrase defense; UK AISI Alignment Project 2025; Prompt Infection arXiv:2410.07283; position papers: DeepMind Distributional AGI Safety, Mila Coming Crisis, CAIF Multi-Agent Risks) — audit-budget quantile thresholding, catch-vs-ship Monte Carlo safety metric with the memoryless-race identity, signal-conditioned monitor collusion collapsing safety ~0.48→~0.02, paraphrase-defense recovery curve, and BFS steps-to-saturation across chain/star/ER agent topologies (reproduces the 50-agent <11-step saturation result). CPU-only synthetic, property-based validation with analytic references (star=2, chain=N-1).
 
 **RLHF Set:**
 - Reward Model: Bradley-Terry pairwise ranking loss, last-token pooling, preference pair training, reward distribution analysis (Wu et al., 2026) — harm taxonomy schemas, attack success rates, per-category/vector effectiveness matrices, policy compliance gap analysis, Cohen's kappa inter-rater reliability, bootstrap confidence intervals, model comparison radar plots, campaign dashboard heatmaps, temporal safety trends, and data-driven campaign prioritization scoring

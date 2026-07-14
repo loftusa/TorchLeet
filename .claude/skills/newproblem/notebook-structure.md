@@ -236,18 +236,21 @@ record = {
     "problem": "<dir path, pre-filled, e.g. papers/sae-concept-manifolds>",
     "date": datetime.date.today().isoformat(),
     "budget_min": 30,                                   # pre-filled
-    "actual_min": ___,                                  # how long it really took
+    "actual_min": "___",                                # how long it really took (number)
     "parts": [                                          # n + tier pre-filled; set outcome
         {"n": 1, "tier": 3, "outcome": "___"},          # unaided | hint | solution | failed
         {"n": 2, "tier": 2, "outcome": "___"},
     ],
-    "difficulty": ___,                                  # 1 (trivial) .. 5 (over my head)
+    "difficulty": "___",                                # 1 (trivial) .. 5 (over my head)
     "stuck": "___",                                     # one phrase: where you got stuck
 }
+assert "___" not in json.dumps(record), "fill every ___ before running this cell"
 with open(_root / ".practice-log.jsonl", "a") as f:
     f.write(json.dumps(record) + "\n")
 print("logged ->", _root / ".practice-log.jsonl")
 ```
+
+**Placeholder trap (learned the hard way):** placeholders must be the STRING `"___"`, never a bare `___` — IPython silently defines `_`, `__`, and `___` (output history), so a bare-`___` cell "succeeds" and appends a garbage record. The assert guard makes an unfilled cell fail loudly. And the log cell goes in the QUESTION notebook only — the solution notebook is auto-executed by Step 5, which would trip the guard (or, without it, pollute the log); put a one-line markdown pointer in the solution instead.
 
 This final retrieval practice cements the session. It's not optional decoration -- it's where a large fraction of long-term retention is created. The log is append-only JSONL (crash-safe); a missing file just means the next problem falls back to the functions-list tier rule.
 

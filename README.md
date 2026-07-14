@@ -156,6 +156,7 @@ Hands-on practice problems for real-world ML engineering:
 2. [Agent Eval Harness](practice/02-Agent-Eval-Harness/) - Agent evaluation harness
 3. [Codenames AI](practice/03-Codenames-AI/) - AI for Codenames board game
 4. [Safety Evaluation Pipeline](practice/04-Safety-Evaluation-Pipeline/isc-safety-eval-Question.ipynb) [(Solution)](practice/04-Safety-Evaluation-Pipeline/_solutions/isc-safety-eval.ipynb) - Red-team campaign analysis pipeline based on Internal Safety Collapse ([Wu et al., 2026](https://arxiv.org/abs/2603.23509)): harm taxonomy, attack success rates, Cohen's kappa, bootstrap CIs, policy compliance gaps, campaign heatmaps, and prioritization scoring
+5. [Multi-Agent Safety: Control Evals, Collusion, and Infection](practice/05-Multi-Agent-Control-Collusion/multi-agent-control-Question.ipynb) [(Solution)](practice/05-Multi-Agent-Control-Collusion/_solutions/multi-agent-control.ipynb) - Toy-but-faithful AI-control machinery ([Greenblatt et al., 2023](https://arxiv.org/abs/2312.06942); [Shlegeris, 2024](https://blog.redwoodresearch.org/p/how-to-prevent-collusion-when-using)): audit-budget thresholding, catch-vs-ship safety metric, signal-based monitor collusion + paraphrase defense, and prompt-infection propagation across agent-network topologies ([arXiv:2410.07283](https://arxiv.org/abs/2410.07283))
 
 ## RLHF & Alignment
 
