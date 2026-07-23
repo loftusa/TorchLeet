@@ -65,7 +65,8 @@ TorchLeet/
 │   ├── 02-Agent-Eval-Harness/ # Agent evaluation harness
 │   ├── 03-Codenames-AI/      # AI for Codenames board game
 │   ├── 04-Safety-Evaluation-Pipeline/  # Red-team campaign analysis (ISC paper)
-│   └── 05-Multi-Agent-Control-Collusion/  # AI-control safety metric, monitor collusion + paraphrase defense, prompt-infection propagation
+│   ├── 05-Multi-Agent-Control-Collusion/  # AI-control safety metric, monitor collusion + paraphrase defense, prompt-infection propagation
+│   └── 06-Control-Charts-Multi-Agent/  # Adaptive Shewhart chart on iso-mirror trajectory, slow-defection sleeper, adaptivity-vs-security tradeoff
 ├── rlhf/
 │   └── 01-Reward-Model/       # Bradley-Terry reward model training
 └── valsai_interview/          # Interview prep scripts
@@ -140,6 +141,7 @@ Each problem directory typically contains:
 - Codenames AI (board game AI)
 - Safety Evaluation Pipeline: Red-team campaign analysis based on ISC paper
 - Multi-Agent Safety (Control Evals, Collusion, Infection): synthesizes the AI-control / multi-agent-safety literature (Greenblatt et al. 2023 control evals; Shlegeris 2024 collusion + paraphrase defense; UK AISI Alignment Project 2025; Prompt Infection arXiv:2410.07283; position papers: DeepMind Distributional AGI Safety, Mila Coming Crisis, CAIF Multi-Agent Risks) — audit-budget quantile thresholding, catch-vs-ship Monte Carlo safety metric with the memoryless-race identity, signal-conditioned monitor collusion collapsing safety ~0.48→~0.02, paraphrase-defense recovery curve, and BFS steps-to-saturation across chain/star/ER agent topologies (reproduces the 50-agent <11-step saturation result). CPU-only synthetic, property-based validation with analytic references (star=2, chain=N-1).
+- Control Charts for Multi-Agent Systems (Helm, Priebe & Duderstadt 2026, arXiv:2605.11135) — statistical process control for agent deployments: iso-mirror trajectory via classical MDS (double-centering B = -½JD⁽²⁾J, top eigenpair), adaptive Shewhart chart with rolling μ̂±kσ̂ limits validated against the analytic Gaussian false-alarm rate 2Φ(-k), normalized sigmoid slow-defection schedule (exact 0→p_max endpoints, p_max/2 midpoint by symmetry), and Monte-Carlo reproduction of both theorems: fast attacks fire an alarm burst in every deployment while slow attacks are indistinguishable from baseline (exactly so at k=5, Theorem 1/Fig. 4), and the static-vs-adaptive 2×2 where each chart fails exactly one scenario (adaptive misses slow drift, static false-alarms on legitimate learning — Theorem 2). CPU-only synthetic; the σ̂-inflation mechanism (a jump inflates the rolling std along with the deviation, so alarms last only ~W/(1+k²) absorption steps) is the notebook's quantitative twist on the paper.
 
 **RLHF Set:**
 - Reward Model: Bradley-Terry pairwise ranking loss, last-token pooling, preference pair training, reward distribution analysis (Wu et al., 2026) — harm taxonomy schemas, attack success rates, per-category/vector effectiveness matrices, policy compliance gap analysis, Cohen's kappa inter-rater reliability, bootstrap confidence intervals, model comparison radar plots, campaign dashboard heatmaps, temporal safety trends, and data-driven campaign prioritization scoring
