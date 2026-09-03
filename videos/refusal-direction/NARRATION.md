@@ -3,6 +3,9 @@
 Voiceover text for the manim video (`refusal_direction_full.mp4`), timed to the six scenes.
 Total runtime ≈ 2m15s. Paper: Arditi et al., 2024 — arXiv:2406.11717.
 
+> The version actually spoken in `refusal_direction_narrated.mp4` is a punchier
+> Feynman/3b1b-register rewrite — see the `NARRATION` dict in `build_narration.py`.
+
 ## Scene 1 — Intro (~23s)
 
 > Every chat model you've used has been trained to refuse. Ask it how to pick a
