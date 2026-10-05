@@ -513,7 +513,7 @@ Functions the user has already implemented in Question notebooks. When creating 
 `lightgbm.LGBMRegressor` (gradient boosted tree regressor, e.g. for predicting returns from text embedding features in Numerai pipelines), `lgbm.fit(X_train, y_train)`, `lgbm.predict(X_test)`, `lgb.Dataset(X, label=y)` (LightGBM Dataset wrapper for the functional training API — wraps feature matrix `X` and label vector `y` into a dataset object; distinct from the scikit-learn API), `lgb.train(params, train_data, num_boost_round=...)` (functional training entry point — takes a `params` dict and an `lgb.Dataset`; distinct from `LGBMRegressor.fit()`)
 
 **NLTK:**
-`nltk.download()`, `nltk.download("words", quiet=True)` (`quiet=True` kwarg — suppresses download progress output, used when running notebooks in automated or test contexts, e.g. `nltk.download("punkt", quiet=True)`), `nltk.corpus.words.words()`, `nltk.corpus.wordnet.synsets()`
+`nltk.download()`, `nltk.download("words", quiet=True)` (`quiet=True` kwarg — suppresses download progress output, used when running notebooks in automated or test contexts, e.g. `nltk.download("punkt", quiet=True)`), `nltk.download("omw-1.4", quiet=True)` (Open Multilingual WordNet download — required alongside `wordnet` for `synsets()` lookups in the Codenames AI notebook word validation), `nltk.corpus.words.words()`, `nltk.corpus.wordnet.synsets()`
 
 **PEFT (Hugging Face):**
 `peft.LoraConfig`, `peft.TaskType`, `peft.TaskType.CAUSAL_LM` (enum member for causal language model tasks — passed as `task_type=peft.TaskType.CAUSAL_LM` in `LoraConfig` when fine-tuning decoder-only LLMs), `peft.get_peft_model()`, `model.print_trainable_parameters()`
